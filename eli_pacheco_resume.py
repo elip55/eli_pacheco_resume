@@ -19,7 +19,7 @@ name = 'Eli Pacheco'
 location = 'Albuquerque, NM'
 pn = '(505) 321 - 5922'
 email = 'eli.pacheco55@outlook.com'
-header = f'\t\t{name}\n\t\t{location}\n\t\t{pn}\n\t\t{email}\n\n'
+header = f'\n\t\t{name}\n\t\t{location}\n\t\t{pn}\n\t\t{email}\n\n'
 
 # build education rows education 
 school = 'University of New Mexico' 
@@ -35,7 +35,7 @@ professional_experience = f'{apple_rtl}{action_rtl}'
 
 #internships and career experience 
 apple_fmr = 'INTERNSHIPS AND CAREER EXPERIENCE:\nApple - Firmware, Jan 2021- June 2021\n'
-action_fmr = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.\n - Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.\n - Used git and GitHub to create, edit, and push local branches to the remote repo.\n\n'
+action_fmr = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.\n- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.\n- Used git and GitHub to create, edit, and push local branches to the remote repo.\n\n'
 internships = f'{apple_fmr}{action_fmr}'
 
 # technical skills
