@@ -30,16 +30,16 @@ education = f'{school}: {degree}\n{expected_grad_date}\n{GPA}\n'
 
 # professional experience 
 apple_rtl = 'PROFESSIONAL EXPERIENCE:\nApple - Operations, 2015-2021\n'
-action_rtl = '- Timely receiving and sending thousands of products within the confines of the store.\n- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.\n- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.\n'
+action_rtl = '- Timely receiving and sending thousands of products within the confines of the store.\n- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.\n- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.\n\n'
 professional_experience = f'{apple_rtl}{action_rtl}'
 
 #internships and career experience 
 apple_fmr = 'INTERNSHIPS AND CAREER EXPERIENCE:\nApple - Firmware, Jan 2021- June 2021\n'
-action_fmr = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more eciently.\n - Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.\n - Used git and GitHub to create, edit, and push local branches to the remote repo.\n'
+action_fmr = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.\n - Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.\n - Used git and GitHub to create, edit, and push local branches to the remote repo.\n\n'
 internships = f'{apple_fmr}{action_fmr}'
 
 # technical skills
-skill_string = "\nSkills:\n ---------------------"
+skill_string = "\nSkills:\n---------------------"
 skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'Operating Systems', 'Mathematics', 'c/c++', 'MATLAB', 'SOLIDWORKS']
 skillset = ""
 for i in skill_list:
