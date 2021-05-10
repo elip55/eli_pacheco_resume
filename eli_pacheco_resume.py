@@ -15,12 +15,12 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 
 # education info
 education = f'EDUCATION:\n'
-schooldict = {'University of New Mexico': 'BA, Computer Science'} # key:value pair for UNM:degree
-egd = 'Expected grad date: 2023' 
-GPA = 'Current GPA: 3.67'
+schooldict = {'University of New Mexico': 'BA, Computer Science', 
+                'Expected Grad Date': 2023,
+                'Current GPA': 3.67} # dictionary to store key:value education items
 for key,value in schooldict.items(): # use for loop to add key:value into education string 
-    education += f'\t{key}: {value}'
-education += f'\n\t{egd}\n\t{GPA}\n\n' # create the education string
+    education += f'\t{key}: {value}\n'
+education += '\n'
 
 # professional experience 
 professional_experience = 'PROFESSIONAL EXPERIENCE:\n\tApple - Operations, 2015-2021\n'
