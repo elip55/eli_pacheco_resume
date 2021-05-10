@@ -31,7 +31,7 @@ def ed():
                      'New Mexico State University': 'BA: Creative Media',
                      'Graduated': 2015,
                      'GPA': 3.2} 
-    for key,value in schooldict.items(): # use for loop to add key:value into education string 
+    for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
         education += f'\t{key}: {value}\n'
     education += '\n'
 
@@ -44,14 +44,14 @@ def prof():
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
     rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
     rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
-    professional_experience1 += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n' # create professional experience string 
+    professional_experience1 += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n' # create Apple professional experience string 
     
     # professional experience Verizon
     professional_experience2 += '\tVerizon - Small Business Specialist, 2015\n'
     vzw_experience1 = '- Connected small/medium businesses within our technological ecosystem.'
     vzw_experience2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
     vzw_experience3 = '- Learned proprietary software for tracking products and clients'
-    professional_experience2 += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n'
+    professional_experience2 += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n' # create Verizon professional experience string
     # nothing fancy here, open to suggestions.
     
 def intern():
@@ -81,12 +81,11 @@ skills()
 
 # write the .txt file 
 with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization 
-    w.write(header)
-    w.write(education)
-    w.write(internships)
-    w.write(professional_experience1)
+    w.write(header) # write header
+    w.write(education) # write education from function
+    w.write(internships) # write internships from function 
+    w.write(professional_experience1) # TODO: look into writing professional experience together 
     w.write(professional_experience2)
-    w.write(skill_string)
-
+    w.write(skill_string) # write skills from function
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
