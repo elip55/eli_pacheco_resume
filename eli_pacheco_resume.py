@@ -1,6 +1,6 @@
 
 # HELLO WORLD!  Welcome to my resume in python!  
-# I am open to any and all feedback: eli.pacheco55@gmail.com
+# My vision: to showcase my coding skills while sending a resume simultaneously.
 # This program MUST be run with python3.x.
 # Simply run this program.
 # Once program is finished, it will write a .txt document for the reader as my resume.
@@ -15,9 +15,9 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 
 # education info
 education = f'EDUCATION:\n'
-schooldict = {'University of New Mexico': 'BA, Computer Science', 
+schooldict = {'University of New Mexico': 'BA, Computer Science',  # dictionary to store key:value education items
                 'Expected Grad Date': 2023,
-                'Current GPA': 3.67} # dictionary to store key:value education items
+                'Current GPA': 3.67} 
 for key,value in schooldict.items(): # use for loop to add key:value into education string 
     education += f'\t{key}: {value}\n'
 education += '\n'
@@ -40,7 +40,7 @@ if intern_action1 not in internships: # using 'if' statement to add job responsi
 
 # technical skills
 skill_string = "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'Operating Systems', 'Mathematics', 'c/c++', 'MATLAB', 'SOLIDWORKS']
+skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Mathematics', 'c/c++', 'MATLAB', 'SOLIDWORKS']
 for i in skill_list: # use a 'for' loop to display skills a column 
     if i not in skill_string:
         skill_string += f'\t{i}\n'
@@ -51,3 +51,6 @@ with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization
     w.write(internships)
     w.write(professional_experience)
     w.write(skill_string)
+
+
+# I am open to any and all feedback: eli.pacheco55@outlook.com
