@@ -3,7 +3,7 @@
 # My vision: to showcase my coding skills while sending a resume simultaneously.
 # This program MUST be run with python3.x.
 # Simply run this program.
-# Once program is finished, it will write a .txt document for the reader as my resume.
+# Once program is finished, a .txt document will be saved locally as my resume.
 
 # global variables as strings
 education = ""
