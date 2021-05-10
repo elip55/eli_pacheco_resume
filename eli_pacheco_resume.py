@@ -1,8 +1,8 @@
 
 # HELLO WORLD!  Welcome to my resume in python!  
 # I am open to any and all feedback: eli.pacheco55@gmail.com
-# This program MUST be run with python3 
-# Simply run this program in any IDE 
+# This program MUST be run with python3.x.
+# Simply run this program.
 # Once program is finished, it will write a .txt document for the reader as my resume.
 
 # header info
