@@ -45,10 +45,9 @@ for i in skill_list: # use a 'for' loop to display skills a column
     if i not in skill_string:
         skill_string += f'{i}\n'
 
-w = open('eli_pacheco_resume.txt', 'w')
-w.write(header)
-w.write(education)
-w.write(internships)
-w.write(professional_experience)
-w.write(skill_string)
-w.close()
+with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization 
+    w.write(header)
+    w.write(education)
+    w.write(internships)
+    w.write(professional_experience)
+    w.write(skill_string)
