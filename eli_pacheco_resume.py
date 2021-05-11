@@ -1,9 +1,13 @@
 
 # HELLO WORLD!  Welcome to my resume in python!  
 # My vision: to showcase my coding skills while sending a resume simultaneously.
-# This program MUST be run with python3.x.
+# NOTE: This program MUST be executed in python3.x.
+
+# - INSTRUCTIONS -
+# -----------------------
 # Simply run this program.
-# Once program is finished, a .txt document will be saved locally as my resume.
+# Once the program is compiled and executed, a .txt document will be saved locally as my resume.
+
 
 # global variables as strings
 education = ""
