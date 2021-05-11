@@ -68,7 +68,7 @@ def skills():
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Mathematics', 'c/c++', 'MATLAB', 'SOLIDWORKS']
+    skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'c/c++', 'MATLAB', 'SOLIDWORKS']
     for i in skill_list: # use a 'for' loop to display skills a column 
         if i not in skill_string:
             skill_string += f'\t{i}\n'
