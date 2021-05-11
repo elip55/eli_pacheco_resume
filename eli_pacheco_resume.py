@@ -7,8 +7,7 @@
 
 # global variables as strings
 education = ""
-professional_experience1 = ""
-professional_experience2 = ""
+professional_experience = ""
 internships = ""
 skill_string = ""
 
@@ -36,22 +35,21 @@ def ed():
     education += '\n'
 
 def prof():
-    global professional_experience1
-    global professional_experience2
+    global professional_experience
     
     # professional experience Apple
-    professional_experience1 += 'PROFESSIONAL EXPERIENCE:\n\tApple - Operations, 2015-2021\n'
+    professional_experience += 'PROFESSIONAL EXPERIENCE:\n\tApple - Operations, 2015-2021\n'
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
     rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
     rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
-    professional_experience1 += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n' # create Apple professional experience string 
+    professional_experience += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n' # create Apple professional experience string 
     
     # professional experience Verizon
-    professional_experience2 += '\tVerizon - Small Business Specialist, 2015\n'
+    professional_experience += '\tVerizon - Small Business Specialist, 2015\n'
     vzw_experience1 = '- Connected small/medium businesses within our technological ecosystem.'
     vzw_experience2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
     vzw_experience3 = '- Learned proprietary software for tracking products and clients'
-    professional_experience2 += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n' # create Verizon professional experience string
+    professional_experience += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n' # create Verizon professional experience string
     # nothing fancy here, open to suggestions.
     
 def intern():
@@ -84,8 +82,7 @@ with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization
     w.write(header) # write header
     w.write(education) # write education from function
     w.write(internships) # write internships from function 
-    w.write(professional_experience1) # TODO: look into writing professional experience together 
-    w.write(professional_experience2)
+    w.write(professional_experience) # write professional experience 
     w.write(skill_string) # write skills from function
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
