@@ -92,3 +92,4 @@ with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization
     w.write(skill_string) # write skills from function
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
+# Look for the C++ version soon! 
