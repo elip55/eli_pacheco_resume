@@ -32,6 +32,8 @@ def ed():
                      'GPA': 3.2} 
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
         education += f'\t{key}: {value}\n'
+        if key == 'Current GPA':
+            education+= f'\n'
     education += '\n'
 
 def prof():
