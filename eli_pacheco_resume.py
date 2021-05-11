@@ -27,7 +27,7 @@ def ed():
     schooldict = {'University of New Mexico': 'BS, Computer Science',  # dictionary to store key:value education items
                     'Expected Grad Date': 2023,
                     'Current GPA': 3.67,
-                     'New Mexico State University': 'BA: Creative Media',
+                     'New Mexico State University': 'BA, Creative Media',
                      'Graduated': 2015,
                      'GPA': 3.2} 
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
@@ -57,10 +57,10 @@ def prof():
 def intern():
     global internships
     # internships and career experience 
-    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n\tApple - Firmware, Jan 2021- June 2021\n'
+    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
     intern_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
     intern_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
-    intern_action3 = '- Used git and GitHub to create, edit, and push local branches to the remote repo.'
+    intern_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
     if intern_action1 not in internships: # using 'if' statement to add job responsibilities to string 
         internships += f'\t\t{intern_action1}\n\t\t{intern_action2}\n\t\t{intern_action3}\n\n' # create internships string  
 
