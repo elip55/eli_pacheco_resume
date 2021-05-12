@@ -2,7 +2,7 @@
 # HELLO WORLD!  Welcome to my resume in python!  
 # My vision: to showcase my coding skills while sending a resume simultaneously.
 # NOTE: This program MUST be executed in python3.x.
-# There are no added libraries to download. 
+# There are no added libraries needed download. 
 
 # - INSTRUCTIONS -
 # -----------------------
