@@ -8,6 +8,7 @@
 # -----------------------
 # Simply run this program.
 # Once the program is compiled and executed, a .txt document will be saved locally as my resume.
+# The .txt document will be saved in the same directory as the program. 
 
 
 # global variables as strings
