@@ -6,8 +6,8 @@
 
 # - INSTRUCTIONS -
 # -----------------------
-# Simply run this program.
-# Once the program is compiled and executed, a .txt document will be saved locally as my resume.
+# Simply run this program locally.
+# Once the program is interpreted and executed, a .txt document will be written locally, as my resume.
 # The .txt document will be saved in the same directory as the program. 
 
 
@@ -94,4 +94,4 @@ with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization
     w.write(skill_string) # write skills from function
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
-# Look for the C++ version soon! 
+# I will be writing the C++ version soon! 
