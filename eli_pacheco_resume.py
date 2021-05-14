@@ -50,7 +50,7 @@ def prof():
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
     rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
     rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
-    professional_experience += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n' # create Apple professional experience string 
+    professional_experience += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n\n' # create Apple professional experience string 
     
     # professional experience Verizon
     professional_experience += '\tVerizon - Small Business Specialist, 2015\n'
