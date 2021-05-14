@@ -26,7 +26,8 @@ email = 'eli.pacheco55@outlook.com'
 header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header string
 
 # functions for info that may change drastically over the course of a career 
-def ed():
+
+def edu(): # education function
     # education info
     global education 
     education = f'EDUCATION:\n'
@@ -42,7 +43,7 @@ def ed():
             education+= f'\n'
     education += '\n'
 
-def prof():
+def prof(): # professional experience function
     global professional_experience
     
     # professional experience Apple
@@ -58,9 +59,9 @@ def prof():
     vzw_experience2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
     vzw_experience3 = '- Learned proprietary software for tracking products and clients'
     professional_experience += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n' # create Verizon professional experience string
-    # nothing fancy here, open to suggestions.
-    
-def intern():
+    # NOTE: nothing fancy here, open to suggestions.
+
+def intern(): # internship and career experience function
     global internships
     # internships and career experience 
     internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
@@ -70,17 +71,16 @@ def intern():
     if intern_action1 not in internships: # using 'if' statement to add job responsibilities to string 
         internships += f'\t\t{intern_action1}\n\t\t{intern_action2}\n\t\t{intern_action3}\n\n' # create internships string  
 
-def skills():
+def skills(): # skills function
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'c/c++', 'MATLAB', 'SOLIDWORKS']
-    for i in skill_list: # use a 'for' loop to display skills a column 
-        if i not in skill_string:
-            skill_string += f'\t{i}\n'
+    skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+    for i in skill_list: # use a 'for' loop to display skills in a column 
+        skill_string += f'\t{i}\n'
 
 # calling functions
-ed()
+edu()
 prof()
 intern()
 skills()
