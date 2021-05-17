@@ -1,7 +1,7 @@
 # eli_pacheco_resume
 
 This is the resume of Eli Pacheco, written in python. 
-This program MUST be run in python3.X.
+This program MUST be run in python3.x.
 
 My vision is simple: I want the ability to showcase coding skills while sending a resume simultaneously. 
 I created a simple resume template and coded the entire resume in python.
