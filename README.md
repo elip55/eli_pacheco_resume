@@ -1,12 +1,15 @@
 # eli_pacheco_resume
 
 This is the resume of Eli Pacheco, written in python. 
-This program MUST be run in python3.x.
 
 My vision is simple: I want the ability to showcase coding skills while sending a resume simultaneously. 
 I created a simple resume template and coded the entire resume in python.
 
-The engineering team can run this program and it will save a .txt resume locally.
-I will also work on a more complex program with classes and functions that an engineering team can clone and run locally.  The final product will be identical. 
+This program MUST be executed in python3.x.
 
-There will also be a c++ program of this in the near future.
+- INSTRUCTIONS -
+-----------------------
+Simply run this program locally.
+Once the program is interpreted and executed, a .txt document will be written locally, as my resume.
+The .txt document will be saved in the same directory as the program. 
+
