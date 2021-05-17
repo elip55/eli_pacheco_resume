@@ -9,7 +9,7 @@ This program MUST be executed in python3.x.
 
 # - INSTRUCTIONS -
 -----------------------
-Simply run this program locally.
+Simply run eli_pacheco_resume.py locally.
 Once the program is interpreted and executed, a .txt document will be written locally, as my resume.
 The .txt document will be saved in the same directory as the program. 
 
