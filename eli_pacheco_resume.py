@@ -55,21 +55,25 @@ def prof(): # professional experience function
     
     # professional experience Verizon
     professional_experience += '\tVerizon - Small Business Specialist, 2015\n'
-    vzw_experience1 = '- Connected small/medium businesses within our technological ecosystem.'
-    vzw_experience2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
-    vzw_experience3 = '- Learned proprietary software for tracking products and clients'
-    professional_experience += f'\t\t{vzw_experience1}\n\t\t{vzw_experience2}\n\t\t{vzw_experience3}\n\n' # create Verizon professional experience string
+    vzw_action1 = '- Connected small/medium businesses within our technological ecosystem.'
+    vzw_action2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
+    vzw_action3 = '- Learned proprietary software for tracking products and clients'
+    professional_experience += f'\t\t{vzw_action1}\n\t\t{vzw_action2}\n\t\t{vzw_action3}\n\n' # create Verizon professional experience string
     # NOTE: nothing fancy here, open to suggestions.
 
 def intern(): # internship and career experience function
     global internships
     # internships and career experience 
-    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
-    intern_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
-    intern_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
-    intern_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
-    if intern_action1 not in internships: # using 'if' statement to add job responsibilities to string 
-        internships += f'\t\t{intern_action1}\n\t\t{intern_action2}\n\t\t{intern_action3}\n\n' # create internships string  
+    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
+
+    internships += '\tSandia National Labs - Advanced Materials, June 2021 - Present\n'
+
+    internships += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
+    apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
+    apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
+    apl_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
+    if apl_action1 not in internships: # using 'if' statement to add job responsibilities to string 
+        internships += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # create internships string  
 
 def skills(): # skills function
     global skill_string
