@@ -64,9 +64,9 @@ def prof(): # professional experience function
 def intern(): # internship and career experience function
     global internships
     # internships and career experience 
-    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
+    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # Begin internship string 
 
-    internships += '\tSandia National Labs - Advanced Materials, June 2021 - Present\n'
+    internships += '\tSandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n'
 
     internships += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
