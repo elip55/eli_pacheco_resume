@@ -7,9 +7,8 @@
 # - INSTRUCTIONS -
 # -----------------------
 # Simply run this program locally.
-# Once the program is interpreted and executed, a .txt document will be written locally, as my resume.
+# Once the program is interpreted and executed, a .txt document will be written locally as my resume.
 # The .txt document will be saved in the same directory as the program. 
-
 
 # global variables as strings
 education = ""
@@ -64,24 +63,26 @@ def prof(): # professional experience function
 def intern(): # internship and career experience function
     global internships
     # internships and career experience 
-    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # Begin internship string 
+    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # begin internships string 
 
-    internships += '\tSandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n'
+    internships += '\tSandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n' # add to internships string 
+    sandia_action1 = '*To be written*'
+    internships += f'\t\t{sandia_action1}\n' # add to internships string 
 
-    internships += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n'
+    internships += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' # add apple to internships string 
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
     apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
     apl_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
     if apl_action1 not in internships: # using 'if' statement to add job responsibilities to string 
-        internships += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # create internships string  
+        internships += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # finish writing internship string 
 
 def skills(): # skills function
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
     skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
-    for i in skill_list: # use a 'for' loop to display skills in a column 
-        skill_string += f'\t{i}\n'
+    for skill in skill_list: # use a 'for' loop to display skills in a column 
+        skill_string += f'\t{skill}\n'
 
 # calling functions
 edu()
