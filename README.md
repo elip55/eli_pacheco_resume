@@ -10,6 +10,6 @@ This program MUST be executed in python3.x.
 # - INSTRUCTIONS -
 -----------------------
 Simply run this program locally.
-Once the program is interpreted and executed, a .txt document will be written locally, as my resume.
+Once the program is interpreted and executed, a .txt document will be written locally, as my resume.\n
 #he .txt document will be saved in the same directory as the program. 
 
