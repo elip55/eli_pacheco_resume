@@ -46,7 +46,9 @@ def prof(): # professional experience function
     global professional_experience
     
     # professional experience Apple
-    professional_experience += 'PROFESSIONAL EXPERIENCE:\n\tApple - Operations, 2015-2021\n'
+    professional_experience += 'PROFESSIONAL EXPERIENCE:\n'
+    
+    professional_experience += '\tApple - Operations, 2015-2021\n'
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
     rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
     rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
