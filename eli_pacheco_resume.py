@@ -58,7 +58,7 @@ def prof(): # professional experience function
     professional_experience += '\tVerizon - Small Business Specialist, 2015\n'
     vzw_action1 = '- Connected small/medium businesses within our technological ecosystem.'
     vzw_action2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
-    vzw_action3 = '- Learned proprietary software for tracking products and clients'
+    vzw_action3 = '- Learned proprietary software for tracking products and clients.'
     professional_experience += f'\t\t{vzw_action1}\n\t\t{vzw_action2}\n\t\t{vzw_action3}\n\n' # create Verizon professional experience string
     # NOTE: nothing fancy here, open to suggestions.
 
