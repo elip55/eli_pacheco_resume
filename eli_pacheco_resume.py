@@ -31,15 +31,15 @@ def edu(): # education function
     global education 
     education = f'EDUCATION:\n'
     schooldict = {'University of New Mexico': 'BS, Computer Science',  # dictionary to store key:value education items
-                    'Expected Grad Date': 2023,
-                    'Current GPA': 3.67,
+                    '\tExpected Grad Date': 2023,
+                    '\tCurrent GPA': 3.67,
                      'New Mexico State University': 'BA, Creative Media',
-                     'Graduated': 2015,
-                     'GPA': 3.2} 
+                     '\tGraduated': 2015,
+                     '\tGPA': 3.2} 
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
         education += f'\t{key}: {value}\n'
-        if key == 'Current GPA': # 'if' statement to seperate the two degrees 
-            education+= f'\n'
+        if key == "\tCurrent GPA": # 
+            education += "\n"
     education += '\n'
 
 def prof(): # professional experience function
@@ -71,7 +71,7 @@ def intern(): # internship and career experience function
     sandia_action1 = '*To be written*'
     internships += f'\t\t{sandia_action1}\n' # add to internships string 
 
-    internships += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' # add apple to internships string 
+    internships += '\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' # add apple to internships string 
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
     apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
     apl_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
