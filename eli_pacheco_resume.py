@@ -1,14 +1,18 @@
 
 # HELLO WORLD!  Welcome to my resume in python!  
-# My vision: to showcase my coding skills while sending a resume simultaneously.
+
+#  - VISION - 
+# -----------------------
+# MyVision1 =  to showcase my coding skills while sending a resume simultaneously.
+# MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries. 
+# MyVision3 =  to write an (almost) universal file for the sake of convenience.
 # NOTE: This program MUST be executed in python3.x.
-# There are no additional libraries needed. 
 
 # - INSTRUCTIONS -
 # -----------------------
 # Simply run this program locally.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
-# The .txt document will be saved in the same directory as the program. 
+# The .txt document will be saved in the same directory(file) as the saved program. 
 
 # global variables as strings
 education = ""
