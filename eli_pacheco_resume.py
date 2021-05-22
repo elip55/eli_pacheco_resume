@@ -14,10 +14,10 @@
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
 # The .txt document will be saved in the same directory(file) as the saved program. 
 
-# global variables as strings
-education = ""
-professional_experience = ""
-internships = ""
+# global variables initialized as strings 
+edu_string = "" 
+prof_string = ""
+intern_string = ""
 skill_string = ""
 
 # header info
@@ -31,9 +31,9 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 # functions for info that may change drastically over the course of a career 
 
 def edu(): # education function
-    # education info
-    global education 
-    education = f'EDUCATION:\n'
+    global edu_string 
+    # universities and degrees 
+    edu_string += f'EDUCATION:\n'
     schooldict = {'University of New Mexico': 'BS, Computer Science',  # dictionary to store key:value education items
                     '\tExpected Grad Date': 2023,
                     '\tCurrent GPA': 3.67,
@@ -41,46 +41,43 @@ def edu(): # education function
                      '\tGraduated': 2015,
                      '\tGPA': 3.2} 
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
-        education += f'\t{key}: {value}\n'
+        edu_string += f'\t{key}: {value}\n'
         if key == "\tCurrent GPA": # 
-            education += "\n"
-    education += '\n'
+            edu_string += "\n"
+    edu_string += '\n'
 
 def prof(): # professional experience function
-    global professional_experience
+    global prof_string
     
     # professional experience Apple
-    professional_experience += 'PROFESSIONAL EXPERIENCE:\n'
-    
-    professional_experience += '\tApple - Operations, 2015-2021\n'
+    prof_string += 'PROFESSIONAL EXPERIENCE:\n'
+    # Apple professional experience
+    prof_string += '\tApple - Operations, 2015-2021\n'
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
     rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
     rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
-    professional_experience += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n\n' # create Apple professional experience string 
+    prof_string += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n\n' # finish Apple professional experience string 
     
-    # professional experience Verizon
-    professional_experience += '\tVerizon - Small Business Specialist, 2015\n'
+    # Verizon professional experience
+    prof_string += '\tVerizon - Small Business Specialist, 2015\n'
     vzw_action1 = '- Connected small/medium businesses within our technological ecosystem.'
     vzw_action2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
     vzw_action3 = '- Learned proprietary software for tracking products and clients.'
-    professional_experience += f'\t\t{vzw_action1}\n\t\t{vzw_action2}\n\t\t{vzw_action3}\n\n' # create Verizon professional experience string
+    prof_string += f'\t\t{vzw_action1}\n\t\t{vzw_action2}\n\t\t{vzw_action3}\n\n' # finish Verizon professional experience string
     # NOTE: nothing fancy here, open to suggestions.
 
-def intern(): # internship and career experience function
-    global internships
+def internships(): # internships and career experience function
+    global intern_string
+    
     # internships and career experience 
-    internships += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # begin internships string 
-
-    internships += '\tSandia National Labs - Advanced Materials Laboratory Science, June 2021 - Present\n' # add to internships string 
-    sandia_action1 = '*To be written*'
-    internships += f'\t\t{sandia_action1}\n' # add to internships string 
-
-    internships += '\n\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' # add apple to internships string 
+    intern_string += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # write title 
+    # Apple internship experience 
+    intern_string += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' 
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
     apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
     apl_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
-    if apl_action1 not in internships: # using 'if' statement to add job responsibilities to string 
-        internships += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # finish writing internship string 
+    if apl_action1 not in intern_string: # use basic 'if' statement to add career experience to intern_string 
+        intern_string += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # finish Apple experience string 
 
 def skills(): # skills function
     global skill_string
@@ -93,15 +90,15 @@ def skills(): # skills function
 # calling functions
 edu()
 prof()
-intern()
+internships()
 skills()
 
 # write the .txt file 
 with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization 
     w.write(header) # write header
-    w.write(education) # write education from function
-    w.write(internships) # write internships from function 
-    w.write(professional_experience) # write professional experience 
+    w.write(edu_string) # write edu_string from function
+    w.write(intern_string) # write intern_string from function 
+    w.write(prof_string) # write professional experience 
     w.write(skill_string) # write skills from function
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
