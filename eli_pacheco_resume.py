@@ -19,6 +19,8 @@ edu_string = ""
 prof_string = ""
 intern_string = ""
 skill_string = ""
+# initialize a dictionary for schools attended
+schooldict = {}
 
 # header info
 # opted for no function as this info will not change drastically over time
@@ -32,14 +34,15 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 
 def edu(): # education function
     global edu_string 
-    # universities and degrees 
-    edu_string += f'EDUCATION:\n'
-    schooldict = {'University of New Mexico': 'BS, Computer Science',  # dictionary to store key:value education items
-                    '\tExpected Grad Date': 2023,
-                    '\tCurrent GPA': 3.67,
-                     'New Mexico State University': 'BA, Creative Media',
-                     '\tGraduated': 2015,
-                     '\tGPA': 3.2} 
+    # universities and degrees added into the dictionary for easy key:value pair additions
+    schooldict['University of New Mexico'] = 'BS, Computer Science'
+    schooldict['\tExpected Grad Date'] = 2023
+    schooldict['\tCurrent GPA'] = 3.67
+    schooldict['New Mexico State University'] = 'BA, Creative Media'
+    schooldict['\tGraduated'] = 2015
+    schooldict['\tGPA'] = 3.2
+    # education string
+    edu_string = f'EDUCATION:\n'
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
         edu_string += f'\t{key}: {value}\n'
         if key == "\tCurrent GPA": # 
@@ -75,7 +78,7 @@ def internships(): # internships and career experience function
     intern_string += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' 
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
     apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
-    apl_action3 = '- Use Git and GitHub to create, edit, and push local branches to the remote repo.'
+    apl_action3 = '- Use git and GitHub to create, edit, and push local branches to the remote repo.'
     if apl_action1 not in intern_string: # use basic 'if' statement to add career experience to intern_string 
         intern_string += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # finish Apple experience string 
 
@@ -83,7 +86,8 @@ def skills(): # skills function
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['python', 'Computer Science', 'Git', 'GitHub', 'File Generation', 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+    skill_list = ['python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'File Generation', 
+                 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
 
