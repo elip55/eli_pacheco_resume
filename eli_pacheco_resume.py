@@ -19,8 +19,7 @@ edu_string = ""
 prof_string = ""
 intern_string = ""
 skill_string = ""
-# initialize a dictionary for schools attended
-schooldict = {}
+
 
 # header info
 # opted for no function as this info will not change drastically over time
@@ -34,6 +33,8 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 
 def edu(): # education function
     global edu_string 
+    schooldict = {}
+
     # education experience in key:value pairs
     schooldict['University of New Mexico'] = 'BS, Computer Science'
     schooldict['\tExpected Grad Date'] = 2023
@@ -42,11 +43,11 @@ def edu(): # education function
     schooldict['\tGraduated'] = 2015
     schooldict['\tGPA'] = 3.2
     # education string
-    edu_string = f'EDUCATION:\n'
+    edu_string = 'EDUCATION:\n'
     for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
         edu_string += f'\t{key}: {value}\n'
-        if key == "\tCurrent GPA": # 
-            edu_string += "\n"
+        if key == '\tCurrent GPA':
+            edu_string += '\n'
     edu_string += '\n'
 
 def prof(): # professional experience function
@@ -74,11 +75,15 @@ def internships(): # internships and career experience function
     
     # internships and career experience 
     intern_string += 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # write title 
+    
+    intern_string += '\tSandia National Labs, June 2021 - Present\n'
+    sandia_action1 = '*to be written*'
+    intern_string += f'\t\t{sandia_action1}\n\n'
     # Apple internship experience 
-    intern_string += '\tApple - Firmware & Software Engineering, Jan 2021- June 2021\n' 
-    apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
-    apl_action2 = '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.'
-    apl_action3 = '- Use git and GitHub to create, edit, and push local branches to the remote repo.'
+    intern_string += '\tApple - Firmware & Software Engineering, Jan 2021 - June 2021\n' 
+    apl_action1 = '- Worked closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
+    apl_action2 = '- Systematically troubleshot hardware, using proprietary applications, to delve into systems and correct behavior.'
+    apl_action3 = '- Used git and GitHub to create, edit, and push local branches to the remote repo.'
     if apl_action1 not in intern_string: # use basic 'if' statement to add career experience to intern_string 
         intern_string += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\n' # finish Apple experience string 
 
@@ -86,7 +91,7 @@ def skills(): # skills function
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'File Generation', 
+    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'File Generation', 
                  'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
