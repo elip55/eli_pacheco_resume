@@ -34,7 +34,6 @@ header = f'\n\t{name}\n\t{location}\n\t{pn}\n\t{email}\n\n' # create the header 
 def edu(): # education function
     global edu_string 
     schooldict = {}
-
     # education experience in key:value pairs
     schooldict['University of New Mexico'] = 'BS, Computer Science'
     schooldict['\tExpected Grad Date'] = 2023
