@@ -57,15 +57,15 @@ def prof(): # professional experience function
     # Apple professional experience
     prof_string += '\tApple - Operations, 2015-2021\n'
     rtl_action1 = '- Timely receiving and sending thousands of products within the confines of the store.'
-    rtl_action2 = '- Adapting to an ever-changing market within hours or minutes to better serve our customers and clients.'
-    rtl_action3 = '- Collaborating creative solutions, with a team, to placing a constantly expanding product line into dimensions that remain the same.'
+    rtl_action2 = '- Adapt to an ever-changing market within hours or minutes to better serve our customers and clients.'
+    rtl_action3 = '- Collaborate creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.'
     prof_string += f'\t\t{rtl_action1}\n\t\t{rtl_action2}\n\t\t{rtl_action3}\n\n' # finish Apple professional experience string 
     
     # Verizon professional experience
     prof_string += '\tVerizon - Small Business Specialist, 2015\n'
-    vzw_action1 = '- Connected small/medium businesses within our technological ecosystem.'
-    vzw_action2 = '- Conceptualized strategies with a team, aligned appointments, and maintained strong client relationships.'
-    vzw_action3 = '- Learned proprietary software for tracking products and clients.'
+    vzw_action1 = '- Connect small/medium businesses within our technological ecosystem.'
+    vzw_action2 = '- Conceptualize strategies with a team, aligned appointments, and maintain strong client relationships.'
+    vzw_action3 = '- Learn proprietary software for tracking products and clients.'
     prof_string += f'\t\t{vzw_action1}\n\t\t{vzw_action2}\n\t\t{vzw_action3}\n' # finish Verizon professional experience string
     # NOTE: nothing fancy here, open to suggestions.
 
@@ -93,7 +93,7 @@ def skills(): # skills function
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
     skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'Operating Systems', 
-                  'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+                  'Code Optimization', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
 
