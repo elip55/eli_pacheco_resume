@@ -81,12 +81,11 @@ def internships(): # internships and career experience function
     # Apple internship experience 
     intern_string += '\tApple - Firmware & Software Engineering, Jan 2021 - June 2021\n' 
     apl_action1 = '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.'
-    apl_action2 = '- Optimize code for more efficient tool usage.'
-    apl_action3 = '- Systematically troubleshot hardware, using proprietary applications, to delve into systems and correct behavior.'
-    apl_action4 = '- Used git and GitHub to create, edit, and push local branches to the remote repo.'
-    apl_action5 = '- Build and maintain strong professional relationships with several different teams to achieve a common goal. ' 
+    apl_action2 = '- Systematically troubleshot hardware, using proprietary applications, to delve into systems and correct behavior.'
+    apl_action3 = '- Used git and GitHub to create, edit, and push local branches to the remote repo.'
+    apl_action4 = '- Build and maintain strong professional relationships with several different teams to achieve a common goal. ' 
     if apl_action1 not in intern_string: # use basic 'if' statement to add career experience to intern_string 
-        intern_string += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\t\t{apl_action4}\n\t\t{apl_action5}\n\n' # finish Apple experience string 
+        intern_string += f'\t\t{apl_action1}\n\t\t{apl_action2}\n\t\t{apl_action3}\n\t\t{apl_action4}\n\n' # finish Apple experience string 
 
 def skills(): # skills function
     global skill_string
