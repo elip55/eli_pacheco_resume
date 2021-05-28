@@ -90,8 +90,8 @@ def skills(): # skills function
     global skill_string
     # technical skills
     skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'File Generation', 
-                 'Operating Systems', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'Operating Systems', 
+                  'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
 
