@@ -121,7 +121,7 @@ class ProfessionalInfo:
         prof_string += f'\t{self.co_title2}\n'
         prof_string += f'\t\t{self.action4}\n\t\t{self.action5}\n\t\t{self.action6}\n'
         return prof_string
-    
+
 # input professional experience as strings
 prof = ProfessionalInfo('Apple - Operations, 2015-2021',
                         '- Timely receiving and sending thousands of products within the confines of the store.',
