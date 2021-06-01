@@ -141,12 +141,12 @@ write_prof = prof.build_prof_string()
 skills()
 
 # write the .txt file 
-with open('eli_pacheco_resume.txt', 'w') as w: # with open for optimization 
-    w.write(write_header) # write header string
-    w.write(write_education) # write education string 
-    w.write(write_intern) # write intern string
-    w.write(write_prof) # write professional experience 
-    w.write(skill_string) # write skills
+with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
+    writer.write(write_header) # write header string
+    writer.write(write_education) # write education string 
+    writer.write(write_intern) # write intern string
+    writer.write(write_prof) # write professional experience 
+    writer.write(skill_string) # write skills
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
 # I will be writing the C++ version soon! 
