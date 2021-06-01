@@ -40,12 +40,13 @@ class HeaderInfo:
         info = f'\n\t{self.name}\n\t{self.location}\n\t{self.pn}\n\t{self.email}\n\n' # create the header string
         return info
 
-# Input the necessary information to build the header string
+# Input the header information as strings
 header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
     
     def __init__(self, school2, degree2, grad_year2, gpa2, school1, degree1, grad_year1, gpa1):
+        # education options can be easily added or deleted in the __init__ function
         self.school2 = school2
         self.degree2 = degree2
         self.grad_year2 = grad_year2
@@ -65,8 +66,7 @@ class EducationInfo:
         schooldict[f'{self.school1}'] = f'{self.degree1}'
         schooldict['\tGraduated'] = f'{self.grad_year1}'
         schooldict['\tGPA'] = f'{self.gpa1}'
-        # education string
-        # education string
+        # initialize education string
         edu_string = 'EDUCATION:\n'
         for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n'
@@ -75,9 +75,9 @@ class EducationInfo:
         edu_string += '\n'
         return edu_string
 
-# input necessary information to build the education string
-edu = EducationInfo('University of New Mexico', 'BS, Computer Science', '2023', '3.67',
-                    'New Mexico State University', 'BA, Digital Media', '2015', '3.2')
+# input education experience as strings, integers, and floats
+edu = EducationInfo('University of New Mexico', 'BS, Computer Science', 2023, 3.67,
+                    'New Mexico State University', 'BA, Digital Media', 2015, 3.2)
 
 class InternInfo:
     
@@ -89,18 +89,18 @@ class InternInfo:
         self.action4 = action4
         
     def build_intern_string(self):
-        intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n' # write title 
+        # initialize internship string
+        intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
         intern_string += f'\t{self.co_title1}\n' 
-        intern_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\t\t{self.action4}\n\n' # finish Apple experience string 
-        return intern_string
-    
-# input necessary intern information
+        intern_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\t\t{self.action4}\n\n' 
+        return intern_string # return built string for writing
+
+# input intern experience as strings
 intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 2021',
                      '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
                      '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
                      '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
                      '- Build and maintain strong professional relationships with several teams to achieve a common goal.')
-
 
 class ProfessionalInfo:
     
@@ -122,7 +122,7 @@ class ProfessionalInfo:
         prof_string += f'\t\t{self.action4}\n\t\t{self.action5}\n\t\t{self.action6}\n'
         return prof_string
     
-
+# input professional experience as strings
 prof = ProfessionalInfo('Apple - Operations, 2015-2021',
                         '- Timely receiving and sending thousands of products within the confines of the store.',
                         '- Adapt to an ever-changing market within hours or minutes to better serve our customers and clients.',
