@@ -85,30 +85,29 @@ edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.
 
 class InternInfo:
     
-    def __init__(self, co_title1, action1, action2, action3, action4,
-                       co_title2, action5):
+    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, intern_action4, intern_action5,
+                       intern_co_title2, intern_action6):
         # company 1
-        self.co_title1 = co_title1
-        self.action1 = action1
-        self.action2 = action2
-        self.action3 = action3
-        self.action4 = action4
-        self.co_title2 = co_title2
-        self.action5 = action5
+        self.intern_co_title1 = intern_co_title1
+        self.intern_action1 = intern_action1
+        self.intern_action2 = intern_action2
+        self.intern_action3 = intern_action3
+        self.intern_action4 = intern_action4
+        self.intern_action5 = intern_action5
         # company 2
-        self.co_title2 = co_title2
-        self.action5 = action5
+        self.intern_co_title2 = intern_co_title2
+        self.intern_action6 = intern_action6
     
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
         # create second company string
-        intern_string += f'\t{self.co_title2}\n'
-        intern_string += f'\t\t{self.action5}\n'
+        intern_string += f'\t{self.intern_co_title2}\n'
+        intern_string += f'\t\t{self.intern_action6}\n'
         intern_string += f'\n'
         # create oldest company string
-        intern_string += f'\t{self.co_title1}\n' 
-        intern_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\t\t{self.action4}\n' 
+        intern_string += f'\t{self.intern_co_title1}\n' 
+        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}\n' 
         intern_string += f'\n'
         return intern_string # return built string for writing
 
@@ -117,31 +116,32 @@ intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 20
                      '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
                      '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
                      '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
+                     '- Adapt to new and complicated software bugs that present themselves as technology progresses.',
                      '- Build and maintain strong professional relationships with several teams to achieve a common goal.',
                      'Sandia National Labs - Advanced Materials Laboratory, June 2021 - Present',
                       '*to be written*')
 
 class ProfessionalInfo:
     
-    def __init__(self, co_title1, action1, action2, action3, 
-                       co_title2, action4, action5, action6):
+    def __init__(self, prof_co_title1, prof_action1, prof_action2, prof_action3, 
+                       prof_co_title2, prof_action4, prof_action5, prof_action6):
         # company 1
-        self.co_title1 = co_title1
-        self.action1 = action1
-        self.action2 = action2
-        self.action3 = action3
+        self.prof_co_title1 = prof_co_title1
+        self.prof_action1 = prof_action1
+        self.prof_action2 = prof_action2
+        self.prof_action3 = prof_action3
         # company 2
-        self.co_title2 = co_title2
-        self.action4 = action4
-        self.action5 = action5
-        self.action6 = action6
+        self.prof_co_title2 = prof_co_title2
+        self.prof_action4 = prof_action4
+        self.prof_action5 = prof_action5
+        self.prof_action6 = prof_action6
     
     def build_prof_string(self):
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
-        prof_string += f'\t{self.co_title1}\n'
-        prof_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\n'
-        prof_string += f'\t{self.co_title2}\n'
-        prof_string += f'\t\t{self.action4}\n\t\t{self.action5}\n\t\t{self.action6}\n'
+        prof_string += f'\t{self.prof_co_title1}\n'
+        prof_string += f'\t\t{self.prof_action1}\n\t\t{self.prof_action2}\n\t\t{self.prof_action3}\n\n'
+        prof_string += f'\t{self.prof_co_title2}\n'
+        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n'
         return prof_string
 
 # input professional experience as strings
