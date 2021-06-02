@@ -11,9 +11,10 @@
 
 # - INSTRUCTIONS -
 # -----------------------
-# Simply run this program locally.
+# TODO: Be aware of the directory(file) you are in.
+# Simply run this program in the chosen directory.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
-# The .txt document will be saved in the same directory(file) as the saved program. 
+# The .txt document will be saved in the same directory as the saved program. 
 
 # Skills are displayed first in the code for ease of editing
 skill_string = ""
