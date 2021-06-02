@@ -5,7 +5,7 @@
 # -----------------------
 # MyVision1 =  to showcase my coding skills while sending a resume simultaneously.
 # MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries.
-# MyVision3 =  to write an (almost) universal file for the sake of convenience.
+# MyVision3 =  to write an output file (almost) universal; for the sake of convenience.
 # MyVision4 =  to make a template simple enough for anyone with basic programming experience to edit
 # NOTE: This program MUST be executed in python3.x.
 
