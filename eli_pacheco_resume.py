@@ -4,8 +4,9 @@
 #  - VISION - 
 # -----------------------
 # MyVision1 =  to showcase my coding skills while sending a resume simultaneously.
-# MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries. 
+# MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries.
 # MyVision3 =  to write an (almost) universal file for the sake of convenience.
+# MyVision4 =  to make a template simple enough for anyone with basic programming experience to edit
 # NOTE: This program MUST be executed in python3.x.
 
 # - INSTRUCTIONS -
@@ -44,55 +45,70 @@ class HeaderInfo:
 header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
-    
-    def __init__(self, school2, degree2, grad_year2, gpa2, school1, degree1, grad_year1, gpa1):
-        # education options can be easily added or deleted in the __init__ function
-        self.school2 = school2
-        self.degree2 = degree2
-        self.grad_year2 = grad_year2
-        self.gpa2 = gpa2
-        
+    # education options can be easily added or deleted in the __init__ constructor   
+    def __init__(self, school1, degree1, grad_year1, gpa1, 
+                       school2, degree2, grad_year2, gpa2):
+        # school 1
         self.school1 = school1
         self.degree1 = degree1
         self.grad_year1 = grad_year1
         self.gpa1 = gpa1
+        # school2
+        self.school2 = school2
+        self.degree2 = degree2
+        self.grad_year2 = grad_year2
+        self.gpa2 = gpa2
     
     def build_edu_string(self):
-        schooldict = {}
+        undergrad_dict = {}
+        # if grad school is the same as undergrad, create new dictionary. EX: grad_dict = {}
         # education experience in key:value pairs
-        schooldict[f'{self.school2}'] = f'{self.degree2}'
-        schooldict['\tExpected Grad Date'] = f'{self.grad_year2}'
-        schooldict['\tCurrent GPA'] = f'{self.gpa2}'
-        schooldict[f'{self.school1}'] = f'{self.degree1}'
-        schooldict['\tGraduated'] = f'{self.grad_year1}'
-        schooldict['\tGPA'] = f'{self.gpa1}'
+        undergrad_dict[f'{self.school2}'] = f'{self.degree2}'
+        undergrad_dict['\tExpected Grad Date'] = f'{self.grad_year2}'
+        undergrad_dict['\tCurrent GPA'] = f'{self.gpa2}'
+        undergrad_dict[f'{self.school1}'] = f'{self.degree1}'
+        undergrad_dict['\tGraduated'] = f'{self.grad_year1}'
+        undergrad_dict['\tGPA'] = f'{self.gpa1}'
         # initialize education string
-        edu_string = 'EDUCATION:\n'
-        for key,value in schooldict.items(): # use 'for' loop to add key:value into education string neatly
+        edu_string = 'EDUCATION:\n' 
+        for key,value in undergrad_dict.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n'
-            if key == '\tCurrent GPA':
+            if key == '\tCurrent GPA': #NOTE: will need to edit this condition accordingly 
                 edu_string += '\n'
         edu_string += '\n'
         return edu_string
 
 # input education experience as strings, integers, and floats
-edu = EducationInfo('University of New Mexico', 'BS, Computer Science', 2023, 3.67,
-                    'New Mexico State University', 'BA, Digital Media', 2015, 3.2)
+edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
+                    'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
 
 class InternInfo:
     
-    def __init__(self, co_title1, action1, action2, action3, action4):
+    def __init__(self, co_title1, action1, action2, action3, action4,
+                       co_title2, action5):
+        # company 1
         self.co_title1 = co_title1
         self.action1 = action1
         self.action2 = action2
         self.action3 = action3
         self.action4 = action4
-        
+        self.co_title2 = co_title2
+        self.action5 = action5
+        # company 2
+        self.co_title2 = co_title2
+        self.action5 = action5
+    
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
+        # create second company string
+        intern_string += f'\t{self.co_title2}\n'
+        intern_string += f'\t\t{self.action5}\n'
+        intern_string += f'\n'
+        # create oldest company string
         intern_string += f'\t{self.co_title1}\n' 
-        intern_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\t\t{self.action4}\n\n' 
+        intern_string += f'\t\t{self.action1}\n\t\t{self.action2}\n\t\t{self.action3}\n\t\t{self.action4}\n' 
+        intern_string += f'\n'
         return intern_string # return built string for writing
 
 # input intern experience as strings
@@ -100,20 +116,25 @@ intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 20
                      '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
                      '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
                      '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
-                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.')
+                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.',
+                     'Sandia National Labs - Advanced Materials Laboratory, June 2021 - Present',
+                      '*to be written*')
 
 class ProfessionalInfo:
     
-    def __init__(self, co_title1, action1, action2, action3, co_title2, action4, action5, action6):
+    def __init__(self, co_title1, action1, action2, action3, 
+                       co_title2, action4, action5, action6):
+        # company 1
         self.co_title1 = co_title1
         self.action1 = action1
         self.action2 = action2
         self.action3 = action3
+        # company 2
         self.co_title2 = co_title2
         self.action4 = action4
         self.action5 = action5
         self.action6 = action6
-        
+    
     def build_prof_string(self):
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += f'\t{self.co_title1}\n'
