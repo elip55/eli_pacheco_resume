@@ -3,9 +3,9 @@
 
 #  - VISION - 
 # -----------------------
-# MyVision1 =  to showcase my coding skills while sending a resume simultaneously.
+# MyVision1 =  to showcase coding skills while sending a resume simultaneously.
 # MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries.
-# MyVision3 =  to write an output file (almost) universal; for the sake of convenience.
+# MyVision3 =  to write an (almost) universal output file; for the sake of convenience.
 # MyVision4 =  to make a template simple enough for anyone with basic programming experience to edit
 # NOTE: This program MUST be executed in python3.x which can be downloaded at: https://www.python.org
 
@@ -16,16 +16,17 @@
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
 # The .txt document will be saved in the same directory as the saved program. 
 
-# Skills are displayed first in the code for ease of editing
+# skills are displayed first in the code for ease of editing
+# initialize skills string
 skill_string = ""
 
-def skills(): # skills function
+def skills(): 
     global skill_string
     # technical skills
-    skill_string += "\nSkills:\n---------------------\n" # initialize skills string, followed by skills as a list
-    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'Operating Systems', 
-                  'Code Optimization', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 'MATLAB', 
-                  'SOLIDWORKS']
+    skill_string += "Skills:\n---------------------\n" 
+    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'Operating Systems',
+                  'Code Optimization', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 
+                  'MATLAB', 'SOLIDWORKS']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
 
@@ -46,7 +47,7 @@ class HeaderInfo:
 header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
-    # education options can be easily added or deleted in the __init__ constructor   
+    # educational information can be easily added or deleted in the __init__ constructor   
     def __init__(self, school1, degree1, grad_year1, gpa1, 
                        school2, degree2, grad_year2, gpa2):
         # school 1
@@ -54,24 +55,25 @@ class EducationInfo:
         self.degree1 = degree1
         self.grad_year1 = grad_year1
         self.gpa1 = gpa1
-        # school2
+        # school2 (most recent)
         self.school2 = school2
         self.degree2 = degree2
         self.grad_year2 = grad_year2
         self.gpa2 = gpa2
     
     def build_edu_string(self):
+        # initialize education string and undergrad dictionary
+        edu_string = 'EDUCATION:\n' 
         undergrad_dict = {}
-        # if grad school is the same as undergrad, create new dictionary. EX: grad_dict = {}
+        # if grad school is the same institution as undergrad, create new dictionary. EX: grad_dict = {}
         # education experience in key:value pairs
-        undergrad_dict[f'{self.school2}'] = f'{self.degree2}'
+        undergrad_dict[f'{self.school2}'] = f'{self.degree2}' # most recent school on top for formatting purposes
         undergrad_dict['\tExpected Grad Date'] = f'{self.grad_year2}'
         undergrad_dict['\tCurrent GPA'] = f'{self.gpa2}'
         undergrad_dict[f'{self.school1}'] = f'{self.degree1}'
         undergrad_dict['\tGraduated'] = f'{self.grad_year1}'
         undergrad_dict['\tGPA'] = f'{self.gpa1}'
-        # initialize education string
-        edu_string = 'EDUCATION:\n' 
+        
         for key,value in undergrad_dict.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n'
             if key == '\tCurrent GPA': #NOTE: will need to edit this condition accordingly 
@@ -80,6 +82,7 @@ class EducationInfo:
         return edu_string
 
 # input education experience as strings, integers, and floats
+# most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
                     'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
 
@@ -94,24 +97,25 @@ class InternInfo:
         self.intern_action3 = intern_action3
         self.intern_action4 = intern_action4
         self.intern_action5 = intern_action5
-        # company 2
+        # company 2 (most recent)
         self.intern_co_title2 = intern_co_title2
         self.intern_action6 = intern_action6
     
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
-        # create second company string
-        intern_string += f'\t{self.intern_co_title2}\n'
+        # build second (most recent) company string
+        intern_string += f'\t{self.intern_co_title2}\n' 
         intern_string += f'\t\t{self.intern_action6}\n'
         intern_string += f'\n'
-        # create oldest company string
+        
         intern_string += f'\t{self.intern_co_title1}\n' 
         intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}\n' 
         intern_string += f'\n'
         return intern_string # return built string for writing
 
 # input intern experience as strings
+# most recent on bottom, reflecting the __init__ constructor
 intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 2021',
                      '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
                      '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
@@ -130,19 +134,24 @@ class ProfessionalInfo:
         self.prof_action1 = prof_action1
         self.prof_action2 = prof_action2
         self.prof_action3 = prof_action3
-        # company 2
+        # company 2 (most recent)
         self.prof_co_title2 = prof_co_title2
         self.prof_action4 = prof_action4
         self.prof_action5 = prof_action5
         self.prof_action6 = prof_action6
     
     def build_prof_string(self):
+        # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
+        # build second (most recent) company string
         prof_string += f'\t{self.prof_co_title2}\n'
-        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n\n'
+        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n'
+        prof_string += '\n'
+        
         prof_string += f'\t{self.prof_co_title1}\n'
         prof_string += f'\t\t{self.prof_action1}\n\t\t{self.prof_action2}\n\t\t{self.prof_action3}\n'
-        return prof_string
+        prof_string += '\n'
+        return prof_string # return built string for writing
 
 # input professional experience as strings
 prof = ProfessionalInfo('Verizon - Small Business Specialist, 2015',
