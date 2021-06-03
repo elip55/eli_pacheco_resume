@@ -43,7 +43,7 @@ class HeaderInfo:
         info = f'\n\t{self.name}\n\t{self.location}\n\t{self.pn}\n\t{self.email}\n\n' # create the header string
         return info
 
-# Input the header information as strings
+# Input the header information as strings reflecting the __init__ constructor
 header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
@@ -67,12 +67,12 @@ class EducationInfo:
         undergrad_dict = {}
         # if grad school is the same institution as undergrad, create new dictionary. EX: grad_dict = {}
         # education experience in key:value pairs
-        undergrad_dict[f'{self.school2}'] = f'{self.degree2}' # most recent school on top for formatting purposes
-        undergrad_dict['\tExpected Grad Date'] = f'{self.grad_year2}'
-        undergrad_dict['\tCurrent GPA'] = f'{self.gpa2}'
-        undergrad_dict[f'{self.school1}'] = f'{self.degree1}'
-        undergrad_dict['\tGraduated'] = f'{self.grad_year1}'
-        undergrad_dict['\tGPA'] = f'{self.gpa1}'
+        undergrad_dict[self.school2] = self.degree2 # most recent school on top for formatting purposes
+        undergrad_dict['\tExpected Grad Date'] = self.grad_year2
+        undergrad_dict['\tCurrent GPA'] = self.gpa2
+        undergrad_dict[self.school1] = self.degree1
+        undergrad_dict['\tGraduated'] = self.grad_year1
+        undergrad_dict['\tGPA'] = self.gpa1
         
         for key,value in undergrad_dict.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n'
