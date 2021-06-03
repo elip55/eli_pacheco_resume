@@ -138,21 +138,21 @@ class ProfessionalInfo:
     
     def build_prof_string(self):
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
-        prof_string += f'\t{self.prof_co_title1}\n'
-        prof_string += f'\t\t{self.prof_action1}\n\t\t{self.prof_action2}\n\t\t{self.prof_action3}\n\n'
         prof_string += f'\t{self.prof_co_title2}\n'
-        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n'
+        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n\n'
+        prof_string += f'\t{self.prof_co_title1}\n'
+        prof_string += f'\t\t{self.prof_action1}\n\t\t{self.prof_action2}\n\t\t{self.prof_action3}\n'
         return prof_string
 
 # input professional experience as strings
-prof = ProfessionalInfo('Apple - Operations, 2015-2021',
-                        '- Timely receiving and sending thousands of products within the confines of the store.',
-                        '- Adapt to an ever-changing market within hours or minutes to better serve our customers and clients.',
-                        '- Collaborate creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
-                        'Verizon - Small Business Specialist, 2015',
+prof = ProfessionalInfo('Verizon - Small Business Specialist, 2015',
                         '- Connect small/medium businesses within our technological ecosystem.',
                         '- Conceptualize strategies with a team, aligned appointments, and maintain strong client relationships.',
-                        '- Learn proprietary software for tracking products and clients.')
+                        '- Learn proprietary software for tracking products and clients.',
+                        'Apple - Operations, 2015-2021',
+                        '- Timely receiving and sending thousands of products within the confines of the store.',
+                        '- Adapt to an ever-changing market within hours or minutes to better serve our customers and clients.',
+                        '- Collaborate creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.')
 
 
 # calling functions and utilizing parent classes
