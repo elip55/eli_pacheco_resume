@@ -68,15 +68,16 @@ class EducationInfo:
         # if grad school is the same institution as undergrad, create new dictionary. EX: grad_dict = {}
         # education experience in key:value pairs
         undergrad_dict[self.school2] = self.degree2 # most recent school on top for formatting purposes
-        undergrad_dict['\tExpected Grad Date'] = self.grad_year2
-        undergrad_dict['\tCurrent GPA'] = self.gpa2
+        undergrad_dict['Expected Grad Date'] = self.grad_year2
+        undergrad_dict['Bachelor of Science GPA'] = self.gpa2
         undergrad_dict[self.school1] = self.degree1
-        undergrad_dict['\tGraduated'] = self.grad_year1
-        undergrad_dict['\tGPA'] = self.gpa1
+        undergrad_dict['Graduated'] = self.grad_year1
+        undergrad_dict['Bachelor of Arts GPA'] = self.gpa1
         
         for key,value in undergrad_dict.items(): # use 'for' loop to add key:value into education string neatly
-            edu_string += f'\t{key}: {value}\n'
-            if key == '\tCurrent GPA': #NOTE: will need to edit this condition accordingly 
+            edu_string += f'\t{key}: {value}\n' # format the header here make dictionary less complex
+            edu_string += '\t'
+            if key == 'Bachelor of Science GPA': #NOTE: will need to edit this condition accordingly 
                 edu_string += '\n'
         edu_string += '\n'
         return edu_string
