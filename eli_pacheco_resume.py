@@ -6,7 +6,7 @@
 # MyVision1 =  to showcase coding skills while sending a resume simultaneously.
 # MyVision2 =  to make the file simple enough to run without ANY elaborate python libraries.
 # MyVision3 =  to write an (almost) universal output file; for the sake of convenience.
-# MyVision4 =  to make a template simple enough for anyone with basic programming experience to edit
+# MyVision4 =  to make a template simple enough for anyone with basic programming experience to edit and utilize
 # NOTE: This program MUST be executed in python3.x which can be downloaded at: https://www.python.org
 
 # - INSTRUCTIONS -
@@ -14,7 +14,7 @@
 # TODO: Be aware of the directory(file) you are in.
 # Simply run this program in the chosen directory.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
-# The .txt document will be saved in the same directory as the saved program. 
+# The .txt document will be written into in same the directory in which it is interpreted. . 
 
 # skills are displayed first in the code for ease of editing
 # initialize skills string
@@ -88,7 +88,7 @@ edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.
                     'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
 
 class InternInfo:
-    
+    # initialize intern experience actions
     def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, intern_action4, intern_action5,
                        intern_co_title2, intern_action6):
         # company 1
@@ -127,7 +127,7 @@ intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 20
                       '*to be written*')
 
 class ProfessionalInfo:
-    
+    # initiate professional experience actions
     def __init__(self, prof_co_title1, prof_action1, prof_action2, prof_action3, 
                        prof_co_title2, prof_action4, prof_action5, prof_action6):
         # company 1
@@ -165,7 +165,7 @@ prof = ProfessionalInfo('Verizon - Small Business Specialist, 2015',
                         '- Collaborate creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.')
 
 
-# calling functions and utilizing parent classes
+# calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
 write_intern = intern.build_intern_string()
