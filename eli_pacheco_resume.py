@@ -66,8 +66,8 @@ class EducationInfo:
         edu_string = 'EDUCATION:\n' 
         school_two = {}
         school_one = {}
-        # 
-        school_two[self.school2] = self.degree2 # most recent school on top for formatting purposes
+        # most recent school on top for formatting purposes
+        school_two[self.school2] = self.degree2 
         school_two['Expected Grad Date'] = self.grad_year2
         school_two['Bachelor of Science GPA'] = self.gpa2
         
