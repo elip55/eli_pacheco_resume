@@ -87,7 +87,7 @@ class EducationInfo:
             edu_string += '\t'
             if key == 'Bachelor of Science GPA': #NOTE: will need to edit this condition accordingly 
                 edu_string += '\n'
-
+        
         edu_string += '\n'
         return edu_string
 
