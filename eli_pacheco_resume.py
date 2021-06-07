@@ -14,7 +14,7 @@
 # TODO: Be aware of the directory(file) you are in.
 # Simply run this program in the chosen directory.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
-# The .txt document will be written into in same the directory in which it is interpreted. . 
+# The .txt document will be written into the directory in which it is interpreted. . 
 
 # skills are displayed first in the code for ease of editing
 # initialize skills string
