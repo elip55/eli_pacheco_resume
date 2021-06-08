@@ -82,8 +82,8 @@ class EducationInfo:
         for key,value in school_one.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
-        # finalize education string
-        edu_string += '\n'
+            if key == 'GPA':
+                edu_string += '\n'
         return edu_string
 
 # input education experience as strings, integers, and floats
