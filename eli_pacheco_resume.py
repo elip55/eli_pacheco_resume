@@ -93,8 +93,7 @@ edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.
 
 class InternInfo:
     # initialize intern experience actions
-    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, intern_action4, intern_action5,
-                       intern_co_title2, intern_action6):
+    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, intern_action4, intern_action5):
         # company 1
         self.intern_co_title1 = intern_co_title1
         self.intern_action1 = intern_action1
@@ -102,18 +101,12 @@ class InternInfo:
         self.intern_action3 = intern_action3
         self.intern_action4 = intern_action4
         self.intern_action5 = intern_action5
-        # company 2 (most recent)
-        self.intern_co_title2 = intern_co_title2
-        self.intern_action6 = intern_action6
+    
     
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
-        # build second (most recent) company string
-        intern_string += f'\t{self.intern_co_title2}\n' 
-        intern_string += f'\t\t{self.intern_action6}\n'
-        intern_string += f'\n'
-        
+        # input co information
         intern_string += f'\t{self.intern_co_title1}\n' 
         intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}\n' 
         intern_string += f'\n'
@@ -126,9 +119,7 @@ intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 20
                      '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
                      '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
                      '- Adapt to new and complicated software bugs that present themselves as technology progresses.',
-                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.',
-                     'Sandia National Labs - Advanced Materials Laboratory, June 2021 - Present',
-                      '*to be written*')
+                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.')
 
 class ProfessionalInfo:
     # initiate professional experience actions
