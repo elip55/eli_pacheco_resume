@@ -14,7 +14,7 @@
 # TODO: Be aware of the directory(file) you are in.
 # Simply run this program in the chosen directory.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
-# The .txt document will be written into the directory in which it is interpreted. . 
+# The .txt document will be written into the directory in which it is interpreted.
 
 # skills are displayed first in the code for ease of editing
 # initialize skills string
@@ -26,7 +26,7 @@ def skills():
     token = '* '
     # initialize the skills string
     skill_string += f"Skills | Proficiency"
-    skill_string += '\n---------------------\n'
+    skill_string += '\n--------------------\n'
     # skills
     skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
@@ -72,6 +72,7 @@ class EducationInfo:
     def build_edu_string(self):
         # initialize education string and school dictionaries
         edu_string = 'EDUCATION:\n' 
+        edu_string += '---------\n'
         school_two = {}
         school_one = {}
         # most recent school on top for formatting purposes
@@ -114,6 +115,7 @@ class InternInfo:
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
+        intern_string += '----------------------------------\n'
         # input co information
         intern_string += f'\t{self.intern_co_title1}\n' 
         intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}\n' 
@@ -147,6 +149,7 @@ class ProfessionalInfo:
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
+        prof_string += '------------------------\n'
         # build second (most recent) company string
         prof_string += f'\t{self.prof_co_title2}\n'
         prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n'
