@@ -27,10 +27,13 @@ def skills():
     # initialize the skills string
     skill_string += f"Skills | Proficiency"
     skill_string += '\n---------------------\n'
+    # skills
     skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
                 'YAML files', 'Regex', 'C/C++', 'MATLAB', 'SOLIDWORKS']
-    proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2]
+    # proficiency numbers corresponding to the above skills
+    proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2] # NOTE: these two lists MUST be equal in length
+    # function to combine the two lists into a dictionary
     skills_dict = dict(zip(skill_list, proficiency_list))
     for skill, proficiency in skills_dict.items():
         skill_string += f'\t{skill} | {token*proficiency}\n'
