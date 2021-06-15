@@ -22,13 +22,18 @@ skill_string = ""
 
 def skills(): 
     global skill_string
+    # creating a token for proficiency measurement
+    token = ' * '
     # technical skills
-    skill_string += "Skills:\n---------------------\n" 
-    skill_list = ['Python', 'Unix Shell (bash & zsh)', 'Computer Science', 'git & GitHub', 'Operating Systems',
-                  'Code Optimization', 'YAML files', 'Regex', 'Advanced Mathematics', 'Creativity', 'C/C++', 
-                  'MATLAB', 'SOLIDWORKS']
+    skill_string = f"Skills | Proficiency"
+    skill_string += '\n---------------------\n'
+    
+    skill_list = [f'Unix Shell (bash & zsh) |{token*5}', f'git & GitHub |{token*5}', f'Python |{token*4}',  f'Computer Science |{token*4}',
+                  f'Operating Systems |{token*4}',f'Advanced Mathematics |{token*4}', f'Creativity |{token*4}', f'Code Optimization |{token*3}', 
+                  f'YAML files |{token*2}', f'Regex |{token*2}', f'C/C++ |{token*2}',f'MATLAB |{token*2}', f'SOLIDWORKS |{token*2}']
     for skill in skill_list: # use a 'for' loop to display skills in a column 
         skill_string += f'\t{skill}\n'
+    return skill_list
 
 # classes of resume information for anyone to edit easily
 class HeaderInfo:
