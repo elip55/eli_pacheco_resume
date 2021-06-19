@@ -17,26 +17,23 @@
 # The .txt document will be written into the directory in which it is interpreted.
 
 # skills are displayed first in the code for ease of editing
-# initialize skills string
-skill_string = ""
-
 def skills(): 
-    global skill_string
     # creating a token for proficiency measurement
     token = '* '
     # initialize the skills string
-    skill_string += f"Skills | Proficiency"
+    skill_string = "Skills | Proficiency"
     skill_string += '\n--------------------\n'
-    # skills
+    # skills as a list
     skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
                 'YAML files', 'Regex', 'C/C++', 'MATLAB', 'SOLIDWORKS']
-    # proficiency numbers corresponding to the above skills
+    # proficiency numbers, as a list, corresponding directly to the above skills
     proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2] # NOTE: these two lists MUST be equal in length
     # function to combine the two lists into a dictionary
     skills_dict = dict(zip(skill_list, proficiency_list))
     for skill, proficiency in skills_dict.items():
         skill_string += f'\t{skill} | {token*proficiency}\n'
+    return skill_string
 
 # classes of resume information for anyone to edit easily
 class HeaderInfo:
@@ -176,7 +173,7 @@ write_header = header.build_header_string()
 write_education = edu.build_edu_string()
 write_intern = intern.build_intern_string()
 write_prof = prof.build_prof_string()
-skills()
+write_skills = skills()
 
 # write the .txt file 
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
@@ -184,7 +181,7 @@ with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization
     writer.write(write_education) # write education string 
     writer.write(write_intern) # write intern string
     writer.write(write_prof) # write professional experience 
-    writer.write(skill_string) # write skills
+    writer.write(write_skills) # write skills
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
 # I will be writing the C++ version soon! 
