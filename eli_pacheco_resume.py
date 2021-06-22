@@ -27,15 +27,15 @@ def skills():
     skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
                 'YAML files', 'Regex', 'C/C++', 'MATLAB', 'SOLIDWORKS']
-    # proficiency numbers, as a list, corresponding directly to the above skills
+    # proficiency measurement, as a list, corresponding directly to the above skills
     proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2] # NOTE: these two lists MUST be equal in length
-    # function to combine the two lists into a dictionary
+    # combine the two lists into key:pair
     skills_dict = dict(zip(skill_list, proficiency_list))
     for skill, proficiency in skills_dict.items():
         skill_string += f'\t{skill} | {token*proficiency}\n'
     return skill_string
 
-# classes of resume information for anyone to edit easily
+# classes for ease of editing
 class HeaderInfo:
     
     def __init__(self, name, location, pn, email):
@@ -52,7 +52,7 @@ class HeaderInfo:
 header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
-    # educational information can be easily added or deleted in the __init__ constructor   
+    # education institutions can be easily added or deleted in the __init__ constructor and function
     def __init__(self, school1, degree1, grad_year1, gpa1, 
                        school2, degree2, grad_year2, gpa2):
         # school 1
