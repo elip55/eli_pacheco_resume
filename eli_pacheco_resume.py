@@ -21,17 +21,29 @@ def skills():
     # creating a token for proficiency measurement
     token = '* '
     # initialize the skills string
-    skill_string = "Skills | Proficiency"
-    skill_string += '\n--------------------\n'
-    # skills as a list
-    skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
+    skill_string = "Professional Skills | Proficiency"
+    skill_string += '\n---------------------------------\n'
+    # profesional skills as a list
+    prof_skills_list = ['Teamwork', 'Creativity', 'Client Development', 'Professional Communication', 
+                        'Adaptation & Collaboration', 'Time Management','Microsoft Office Suite', 
+                        'macOS', 'Windows', 'iOS', 'Android OS']
+    proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,5,4]
+    professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
+    for skill, proficiency in professional_skills_dict.items():
+        skill_string += f'\t{skill} | {token*proficiency}\n'
+    skill_string += '\n'
+    # add technical skills string
+    skill_string += "Technical Skills | Proficiency"
+    skill_string += '\n---------------------------------\n'
+    # technical skills as a list
+    tech_skill_list = ['git & GitHub', 'jupyter lab' 'Unix Shell (bash & zsh)', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
-                'YAML files', 'Regex', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+                'Regex', 'YAML files', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     # proficiency measurement, as a list, corresponding directly to the above skills
-    proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2] # NOTE: these two lists MUST be equal in length
+    proficiency_list2 = [5,4,4,3,3,3,3,3,3,3,2,2,2,2] # NOTE: these two lists MUST be equal in length
     # combine the two lists into key:pair
-    skills_dict = dict(zip(skill_list, proficiency_list))
-    for skill, proficiency in skills_dict.items():
+    tech_skills_dict = dict(zip(tech_skill_list, proficiency_list2))
+    for skill, proficiency in tech_skills_dict.items():
         skill_string += f'\t{skill} | {token*proficiency}\n'
     return skill_string
 
@@ -122,11 +134,11 @@ class InternInfo:
 # input intern experience as strings
 # most recent on bottom, reflecting the __init__ constructor
 intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 2021',
-                     '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
-                     '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
-                     '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
-                     '- Adapt to new and complicated software bugs that present themselves as technology progresses.',
-                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.')
+                     '- Using regular expression and working with a pair programmer, I conceptualized, wrote, and tested Python tools which parsed through firmware logs and extracted relevant data.\n\t\t  The data would then be written into .txt, .csv, and .vcd files as needed.',
+                     '- Tasked with optimizing code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested ideas and implemented code that was 650% faster than the csv module.',
+                     '- Systematically troubleshoot hardware, using internally written tools, to delve into systems and correct the behavior. ',
+                     '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were implemented daily.  The branches on projects ranged from 4 to 100+. ',
+                     '- Built and maintained professional relationships to achieve a common goal.  Gaining access to tools to help make our tool more efficient. ')
 
 class ProfessionalInfo:
     # initiate professional experience actions
