@@ -21,17 +21,29 @@ def skills():
     # creating a token for proficiency measurement
     token = '* '
     # initialize the skills string
-    skill_string = "Skills | Proficiency"
-    skill_string += '\n--------------------\n'
-    # skills as a list
-    skill_list = ['Unix Shell (bash & zsh)', 'git & GitHub', 'Python',  'Computer Science',
+    skill_string = "Professional Skills | Proficiency"
+    skill_string += '\n---------------------------------\n'
+    # profesional skills as a list
+    prof_skills_list = ['Teamwork', 'Creativity', 'Task Prioritization' 'Client Development', 
+                        'Professional Communication', 'Adaptation & Collaboration', 'Time Management','Microsoft Office Suite', 
+                        'macOS', 'Windows', 'iOS', 'Android OS']
+    proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,5,5,3]
+    professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
+    for skill, proficiency in professional_skills_dict.items():
+        skill_string += f'\t{skill} | {token*proficiency}\n'
+    skill_string += '\n'
+    # add technical skills string
+    skill_string += "Technical Skills | Proficiency"
+    skill_string += '\n---------------------------------\n'
+    # technical skills as a list
+    tech_skill_list = ['git & GitHub', 'jupyter lab', 'Unix Shell', 'Python',  'Computer Science',
                 'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
-                'YAML files', 'Regex', 'C/C++', 'MATLAB', 'SOLIDWORKS']
+                'Regex', 'YAML files', 'C/C++', 'MATLAB', 'SOLIDWORKS']
     # proficiency measurement, as a list, corresponding directly to the above skills
-    proficiency_list = [5,5,4,4,4,4,4,3,2,2,2,2,2] # NOTE: these two lists MUST be equal in length
+    proficiency_list2 = [5,4,4,3,3,3,3,3,3,3,2,2,2,2] # NOTE: these lists MUST be equal in length
     # combine the two lists into key:pair
-    skills_dict = dict(zip(skill_list, proficiency_list))
-    for skill, proficiency in skills_dict.items():
+    tech_skills_dict = dict(zip(tech_skill_list, proficiency_list2))
+    for skill, proficiency in tech_skills_dict.items():
         skill_string += f'\t{skill} | {token*proficiency}\n'
     return skill_string
 
@@ -107,65 +119,71 @@ class InternInfo:
         self.intern_action3 = intern_action3
         self.intern_action4 = intern_action4
         self.intern_action5 = intern_action5
-    
-    
+    # function to build the intern block
     def build_intern_string(self):
         # initialize internship string
         intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
         intern_string += '----------------------------------\n'
         # input co information
         intern_string += f'\t{self.intern_co_title1}\n' 
-        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}\n' 
-        intern_string += f'\n'
+        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}' 
+        intern_string += f'\n\n'
         return intern_string # return built string for writing
 
 # input intern experience as strings
 # most recent on bottom, reflecting the __init__ constructor
-intern = InternInfo('Apple - Firmware & Software Engineering, Jan 2021 - June 2021',
-                     '- Work closely with developers to write and adapt tools, in python, to help firmware teams read through logs more efficiently.',
-                     '- Systematically troubleshoot hardware, using proprietary applications, to delve into systems and correct behavior.',
-                     '- Use git and GitHub to create, edit, and push local branches to the remote repo.',
-                     '- Adapt to new and complicated software bugs that present themselves as technology progresses.',
-                     '- Build and maintain strong professional relationships with several teams to achieve a common goal.')
+# NOTE: using \n\t\t for longer actions is recommended
+intern = InternInfo('Apple - Firmware & Software Engineering, January 2021 - June 2021',
+                     '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt, .csv, and .vcd files as needed.',
+                     '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded by implemented code that was 650 percent faster than the csv module.',
+                     '- Systematically troubleshot hardware using several different tools.\n\t\t  With these internally written tools, I delved into hardware systems and identified bugs and behaviors.',
+                     '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
+                     '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
 
 class ProfessionalInfo:
     # initiate professional experience actions
-    def __init__(self, prof_co_title1, prof_action1, prof_action2, prof_action3, 
-                       prof_co_title2, prof_action4, prof_action5, prof_action6):
-        # company 1
-        self.prof_co_title1 = prof_co_title1
-        self.prof_action1 = prof_action1
-        self.prof_action2 = prof_action2
-        self.prof_action3 = prof_action3
-        # company 2 (most recent)
-        self.prof_co_title2 = prof_co_title2
-        self.prof_action4 = prof_action4
-        self.prof_action5 = prof_action5
-        self.prof_action6 = prof_action6
-    
+    def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
+                       co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9):
+        # first company
+        self.co_title1 = co_title1
+        self.pro_action1 = pro_action1
+        self.pro_action2 = pro_action2
+        self.pro_action3 = pro_action3
+        self.pro_action4 = pro_action4
+        # second company
+        self.co_title2 = co_title2
+        self.pro_action5 = pro_action5
+        self.pro_action6 = pro_action6
+        self.pro_action7 = pro_action7
+        self.pro_action8 = pro_action8
+        self.pro_action9 = pro_action9
+    # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
-        # build second (most recent) company string
-        prof_string += f'\t{self.prof_co_title2}\n'
-        prof_string += f'\t\t{self.prof_action4}\n\t\t{self.prof_action5}\n\t\t{self.prof_action6}\n'
+        prof_string += f'\t{self.co_title2}\n'
+        prof_string += f'\t\t{self.pro_action5}\n\t\t{self.pro_action6}\n\t\t{self.pro_action7}\n\t\t{self.pro_action8}\n\t\t{self.pro_action9}'
         prof_string += '\n'
-        
-        prof_string += f'\t{self.prof_co_title1}\n'
-        prof_string += f'\t\t{self.prof_action1}\n\t\t{self.prof_action2}\n\t\t{self.prof_action3}\n'
-        prof_string += '\n'
-        return prof_string # return built string for writing
+        prof_string += f'\t{self.co_title1}\n'
+        prof_string += f'\t\t{self.pro_action1}\n\t\t{self.pro_action2}\n\t\t{self.pro_action3}\n\t\t{self.pro_action4}'
+        prof_string += '\n\n'
+        return prof_string
 
-# input professional experience as strings
-prof = ProfessionalInfo('Verizon - Small Business Specialist, 2015',
-                        '- Connect small/medium businesses within our technological ecosystem.',
-                        '- Conceptualize strategies with a team, aligned appointments, and maintain strong client relationships.',
-                        '- Learn proprietary software for tracking products and clients.',
-                        'Apple - Operations, 2015-2021',
-                        '- Timely receiving and sending thousands of products within the confines of the store.',
-                        '- Adapt to an ever-changing market within hours or minutes to better serve our customers and clients.',
-                        '- Collaborate creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.')
+# input intern experience as strings
+# most recent on bottom, reflecting the __init__ constructor
+# NOTE: using \n\t\t for longer actions is recommended
+prof = ProfessionalInfo('Apple - Specialist, November 2015 – January 2019',
+                        '- Learned advanced selling and communication techniques through Apple training.',
+                        '- Met and exceeded quotas in sales, business connections, customer satisfaction, and attachments for each quarter.',
+                        '- Worked in understanding operating systems across devices and companies to better find a solution for customers and clients.',
+                        '- Introduced businesses to tech solutions including hardware, software, cloud platforms, accessories and Apple services.',
+                        'Apple - Operations, January 2019 - January 2021',
+                        '- Received and shipped thousands of products within the confines of the store.',
+                        '- Adapted to a constantly changing product line within hours, or minutes, to better serve our customers and clients.',
+                        '- Shipments were received at all hours of the day, every day.  Skills in time management and task prioritization were necessary to delegate tasks accordingly.',
+                        '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
+                        '- Using simple mathematics, I devised a plan to utilize every inch of space in the bays while the iPhone and Apple Watch product line grew by 300%.\n\t\t This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for product.\n\t\t This method increased the floorspace for more shipments, products, and walking area, if needed.')
 
 
 # calling functions and utilizing classes
