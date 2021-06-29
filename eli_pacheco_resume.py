@@ -128,7 +128,9 @@ class InternInfo:
         intern_string += '----------------------------------\n'
         # input co information
         intern_string += f'\t{self.intern_co_title1}\n' 
-        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t{self.intern_action4}\n\t\t{self.intern_action5}' 
+        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t'
+        # split the string for cleaner code
+        intern_string += f'{self.intern_action4}\n\t\t{self.intern_action5}\n\t\t{self.intern_action6}' 
         intern_string += f'\n\n'
         return intern_string # return built string for writing
 
@@ -177,9 +179,9 @@ class ProfessionalInfo:
 # most recent on bottom, reflecting the __init__ constructor
 # NOTE: using \n\t\t for longer actions is recommended
 prof = ProfessionalInfo('Apple - Specialist, November 2015 – January 2019',
-                        '- Learned advanced selling and communication techniques through Apple training.',
+                        '- Learned advanced selling and professional communication techniques through Apple training.',
                         '- Met and exceeded quotas in sales, business connections, customer satisfaction, and attachments for each quarter.',
-                        '- Worked in understanding operating systems across devices and companies to better find a solution for customers and clients.',
+                        '-	Worked in understanding operating systems across devices and companies to suggest the perfect solutions for customers and clients.',
                         '- Introduced businesses to tech solutions including hardware, software, cloud platforms, accessories and Apple services.',
                         'Apple - Operations, January 2019 - January 2021',
                         '- Received and shipped thousands of products within the confines of the store.',
