@@ -111,7 +111,8 @@ edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.
 
 class InternInfo:
     # initialize intern experience actions
-    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, intern_action4, intern_action5):
+    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, 
+                intern_action4, intern_action5, intern_action6):
         # company 1
         self.intern_co_title1 = intern_co_title1
         self.intern_action1 = intern_action1
@@ -119,6 +120,7 @@ class InternInfo:
         self.intern_action3 = intern_action3
         self.intern_action4 = intern_action4
         self.intern_action5 = intern_action5
+        self.intern_action6 = intern_action6
     # function to build the intern block
     def build_intern_string(self):
         # initialize internship string
@@ -134,9 +136,10 @@ class InternInfo:
 # most recent on bottom, reflecting the __init__ constructor
 # NOTE: using \n\t\t for longer actions is recommended
 intern = InternInfo('Apple - Firmware & Software Engineering, January 2021 - June 2021',
-                     '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt, .csv, and .vcd files as needed.',
-                     '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded by implemented code that was 650 percent faster than the csv module.',
-                     '- Systematically troubleshot hardware using several different tools.\n\t\t  With these internally written tools, I delved into hardware systems and identified bugs and behaviors.',
+                     '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
+                     '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
+                     '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
+                     '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                      '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                      '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
 
