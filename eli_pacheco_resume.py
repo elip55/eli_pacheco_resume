@@ -186,7 +186,7 @@ prof = ProfessionalInfo('Apple - Specialist, November 2015 – January 2019',
                         '- Adapted to a constantly changing product line within hours, or minutes, to better serve our customers and clients.',
                         '- Shipments were received at all hours of the day, every day.  Skills in time management and task prioritization were necessary to delegate tasks accordingly.',
                         '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
-                        '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300%.  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\tThis led to an increase in the floorspace area for more shipments, products, and physical movement.')
+                        '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300%.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.')
 
 
 # calling functions and utilizing classes
