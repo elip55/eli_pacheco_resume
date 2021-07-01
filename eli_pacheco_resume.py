@@ -15,39 +15,8 @@
 # Simply run this program in the chosen directory.
 # Once the program is interpreted and executed, a .txt document will be written locally as my resume.
 # The .txt document will be written into the directory in which it is interpreted.
+# -----------------------
 
-# skills are displayed first in the code for ease of editing
-def skills(): 
-    # creating a token for proficiency measurement
-    token = '* '
-    # initialize the skills string
-    skill_string = "Professional Skills | Proficiency"
-    skill_string += '\n---------------------------------\n'
-    # profesional skills as a list
-    prof_skills_list = ['Teamwork', 'Creativity', 'Task Prioritization' 'Client Development', 
-                        'Professional Communication', 'Adaptation & Collaboration', 'Time Management','Microsoft Office Suite', 
-                        'macOS', 'Windows', 'iOS', 'Android OS']
-    proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,5,5,3]
-    professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
-    for skill, proficiency in professional_skills_dict.items():
-        skill_string += f'\t{skill} | {token*proficiency}\n'
-    skill_string += '\n'
-    # add technical skills string
-    skill_string += "Technical Skills | Proficiency"
-    skill_string += '\n---------------------------------\n'
-    # technical skills as a list
-    tech_skill_list = ['git & GitHub', 'jupyter lab', 'Unix Shell', 'Python',  'Computer Science',
-                'Operating Systems', 'Advanced Mathematics', 'Creativity', 'Code Optimization', 
-                'Regex', 'YAML files', 'C/C++', 'MATLAB', 'SOLIDWORKS']
-    # proficiency measurement, as a list, corresponding directly to the above skills
-    proficiency_list2 = [5,4,4,3,3,3,3,3,3,3,2,2,2,2] # NOTE: these lists MUST be equal in length
-    # combine the two lists into key:pair
-    tech_skills_dict = dict(zip(tech_skill_list, proficiency_list2))
-    for skill, proficiency in tech_skills_dict.items():
-        skill_string += f'\t{skill} | {token*proficiency}\n'
-    return skill_string
-
-# classes for ease of editing
 class HeaderInfo:
     
     def __init__(self, name, location, pn, email):
@@ -145,7 +114,7 @@ intern = InternInfo('Apple - Firmware & Software Engineering, January 2021 - Jun
                      '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                      '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
 
-class ProfessionalInfo:
+class ProfessionalExperience:
     # initiate professional experience actions
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
                        co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9):
@@ -178,7 +147,7 @@ class ProfessionalInfo:
 # input intern experience as strings
 # most recent on bottom, reflecting the __init__ constructor
 # NOTE: using \n\t\t for longer actions is recommended
-prof = ProfessionalInfo('Apple - Specialist, November 2015 – January 2019',
+prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 2019',
                         '- Learned advanced selling and professional communication techniques through Apple training.',
                         '- Met and exceeded quotas in sales, business connections, customer satisfaction, and attachments for each quarter.',
                         '- Worked in understanding operating systems across devices and companies to suggest the perfect solutions for customers and clients.',
@@ -190,13 +159,82 @@ prof = ProfessionalInfo('Apple - Specialist, November 2015 – January 2019',
                         '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
                         '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300 percent.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.')
 
+class TechnicalSkills:
+    
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+        self.s4 = s4
+        self.s5 = s5
+        self.s6 = s6
+        self.s7 = s7
+        self.s8 = s8
+        self.s9 = s9
+        self.s10 = s10
+        self.s11 = s11
+    
+    def build_tech_skills_string(self):
+        token = '* '
+        # initialize the skills string
+        tech_skill_string = "Technical Skills | Proficiency"
+        tech_skill_string += '\n---------------------------------\n'
+        # profesional skills as a list
+        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
+                            self.s7, self.s8, self.s9, self.s10, self.s11]
+        proficiency_list1 = [4,4,4,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must identical
+        technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
+        for skill, proficiency in technical_skills_dict.items():
+            tech_skill_string += f'\t{skill} | {token*proficiency}\n'
+        tech_skill_string += '\n'
+        return tech_skill_string
+
+# input skills as strings
+technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Computer Science', 'Operating Systems', 
+                                    'Advanced Mathematics', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
+class ProfessionalSkills:
+    
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+        self.s4 = s4
+        self.s5 = s5
+        self.s6 = s6
+        self.s7 = s7
+        self.s8 = s8
+        self.s9 = s9
+        self.s10 = s10
+        self.s11 = s11
+        self.s12 = s12
+    
+    def build_prof_skills_string(self):
+        token = '* '
+        # initialize the skills string
+        prof_skill_string = "Professional Skills | Proficiency"
+        prof_skill_string += '\n---------------------------------\n'
+        # profesional skills as a list
+        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12]
+        proficiency_list1 = [5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must identical
+        professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
+        for skill, proficiency in professional_skills_dict.items():
+            prof_skill_string += f'\t{skill} | {token*proficiency}\n'
+        prof_skill_string += '\n'
+        return prof_skill_string
+
+# input skills as strings
+prof_skills = ProfessionalSkills('Teamwork', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
+                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 
+                    'Android OS')
 
 # calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
 write_intern = intern.build_intern_string()
 write_prof = prof.build_prof_string()
-write_skills = skills()
+write_tech_skills = technical_skills.build_tech_skills_string()
+write_prof_skills = prof_skills.build_prof_skills_string()
 
 # write the .txt file 
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
@@ -204,7 +242,8 @@ with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization
     writer.write(write_education) # write education string 
     writer.write(write_intern) # write intern string
     writer.write(write_prof) # write professional experience 
-    writer.write(write_skills) # write skills
+    writer.write(write_tech_skills)
+    writer.write(write_prof_skills) # write skills
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
 # I will be writing the C++ version soon! 
