@@ -17,6 +17,15 @@
 # The .txt document will be written into the directory in which it is interpreted.
 # -----------------------
 
+# the order of classes are as follows: 
+# header
+# education
+# internships and career experience
+# professional experience
+# technical skills
+# professional skills
+# edit each class as needed
+
 class HeaderInfo:
     
     def __init__(self, name, location, pn, email):
@@ -237,6 +246,7 @@ write_tech_skills = technical_skills.build_tech_skills_string()
 write_prof_skills = prof_skills.build_prof_skills_string()
 
 # write the .txt file 
+# change the name of the .txt file as needed
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
     writer.write(write_header) # write header string
     writer.write(write_education) # write education string 
@@ -246,4 +256,3 @@ with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization
     writer.write(write_prof_skills) # write skills
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
-# I will be writing the C++ version soon! 
