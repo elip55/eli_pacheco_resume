@@ -89,25 +89,32 @@ edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.
                     'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
 class Certificates:
     # initialize certificate actions
-    def __init__(self, cert1, desc1, year1):
+    def __init__(self, cert1, desc1, year1, fact1):
         self.cert1 = cert1
         self.desc1 = desc1
         self.year1 = year1
+        self.fact1 = fact1
         
     def build_cert_string(self):
         # initialize cert string
         cert_string = 'CERTIFICATES:\n'
         cert_string += '-----------\n'
+        # initiate dictionary
         certificate1 = {}
+        facts = [self.fact1]
         certificate1[self.cert1] = self.desc1
         certificate1['Attained'] = self.year1
         for key, value in certificate1.items():
             cert_string += f'\t{key}: {value}\n'
             cert_string += '\t'
+        # creat list for facts on certificates
+        facts = [self.fact1]
+        for i in facts:
+            cert_string += f'\t- {i}\n'
         cert_string += '\n'
         return cert_string
 
-cert = Certificates('Google IT suppport', 'Professional Certificate', 2021)
+cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
 
 class InternInfo:
     # initialize intern experience actions
