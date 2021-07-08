@@ -98,7 +98,7 @@ class Certificates:
     def build_cert_string(self):
         # initialize cert string
         cert_string = 'CERTIFICATES:\n'
-        cert_string += '-----------\n'
+        cert_string += '-------------\n'
         # initiate dictionary
         certificate1 = {}
         facts = [self.fact1]
@@ -107,7 +107,7 @@ class Certificates:
         for key, value in certificate1.items():
             cert_string += f'\t{key}: {value}\n'
             cert_string += '\t'
-        # creat list for facts on certificates
+        # create list for facts on certificates
         facts = [self.fact1]
         for i in facts:
             cert_string += f'\t- {i}\n'
