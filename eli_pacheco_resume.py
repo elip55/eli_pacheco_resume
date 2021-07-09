@@ -233,7 +233,7 @@ technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell'
                                     'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
 class ProfessionalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -246,6 +246,7 @@ class ProfessionalSkills:
         self.s10 = s10
         self.s11 = s11
         self.s12 = s12
+        self.s13 = s13
     
     def build_prof_skills_string(self):
         token = '* '
@@ -254,8 +255,8 @@ class ProfessionalSkills:
         prof_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12]
-        proficiency_list1 = [5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must identical
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
+        proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must identical
         professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in professional_skills_dict.items():
             prof_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -263,7 +264,7 @@ class ProfessionalSkills:
         return prof_skill_string
 
 # input skills as strings
-prof_skills = ProfessionalSkills('Teamwork', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
+prof_skills = ProfessionalSkills('Teamwork', 'Customer Service', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
                     'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 
                     'Android OS')
 
