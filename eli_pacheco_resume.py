@@ -213,7 +213,7 @@ class TechnicalSkills:
         self.s11 = s11
         self.s12 = s12
         self.s13 = s13
-    
+
     def build_tech_skills_string(self):
         token = '* '
         # initialize the skills string
@@ -232,6 +232,7 @@ class TechnicalSkills:
 # input skills as strings
 technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Troubleshooting', 'Computer Science', 'Operating Systems', 
                                     'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
+
 class ProfessionalSkills:
     
     def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
@@ -266,8 +267,7 @@ class ProfessionalSkills:
 
 # input skills as strings
 prof_skills = ProfessionalSkills('Teamwork', 'Customer Service', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
-                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 
-                    'Android OS')
+                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 'Android OS')
 
 # calling functions and utilizing classes
 write_header = header.build_header_string()
