@@ -213,7 +213,7 @@ class TechnicalSkills:
         self.s11 = s11
         self.s12 = s12
         self.s13 = s13
-
+        
     def build_tech_skills_string(self):
         token = '* '
         # initialize the skills string
