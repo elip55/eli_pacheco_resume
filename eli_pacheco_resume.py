@@ -20,6 +20,7 @@
 # the order of classes are as follows: 
 # header
 # education
+# certificates
 # internships and career experience
 # professional experience
 # technical skills
@@ -59,7 +60,7 @@ class EducationInfo:
     def build_edu_string(self):
         # initialize education string and school dictionaries
         edu_string = 'EDUCATION:\n' 
-        edu_string += '---------\n'
+        edu_string += '----------\n'
         school_two = {}
         school_one = {}
         # most recent school on top for formatting purposes
@@ -86,6 +87,34 @@ class EducationInfo:
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
                     'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
+class Certificates:
+    # initialize certificate actions
+    def __init__(self, cert1, desc1, year1, fact1):
+        self.cert1 = cert1
+        self.desc1 = desc1
+        self.year1 = year1
+        self.fact1 = fact1
+        
+    def build_cert_string(self):
+        # initialize cert string
+        cert_string = 'CERTIFICATES:\n'
+        cert_string += '-------------\n'
+        # initiate dictionary
+        certificate1 = {}
+        facts = [self.fact1]
+        certificate1[self.cert1] = self.desc1
+        certificate1['Attained'] = self.year1
+        for key, value in certificate1.items():
+            cert_string += f'\t{key}: {value}\n'
+            cert_string += '\t'
+        # create list for facts on certificates
+        facts = [self.fact1]
+        for i in facts:
+            cert_string += f'\t- {i}\n'
+        cert_string += '\n'
+        return cert_string
+
+cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
 
 class InternInfo:
     # initialize intern experience actions
@@ -170,40 +199,7 @@ prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 201
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11):
-        self.s1 = s1
-        self.s2 = s2
-        self.s3 = s3
-        self.s4 = s4
-        self.s5 = s5
-        self.s6 = s6
-        self.s7 = s7
-        self.s8 = s8
-        self.s9 = s9
-        self.s10 = s10
-        self.s11 = s11
-    
-    def build_tech_skills_string(self):
-        token = '* '
-        # initialize the skills string
-        tech_skill_string = "Technical Skills | Proficiency"
-        tech_skill_string += '\n---------------------------------\n'
-        # profesional skills as a list
-        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11]
-        proficiency_list1 = [4,4,4,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must identical
-        technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
-        for skill, proficiency in technical_skills_dict.items():
-            tech_skill_string += f'\t{skill} | {token*proficiency}\n'
-        tech_skill_string += '\n'
-        return tech_skill_string
-
-# input skills as strings
-technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Computer Science', 'Operating Systems', 
-                                    'Advanced Mathematics', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
-class ProfessionalSkills:
-    
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -216,6 +212,43 @@ class ProfessionalSkills:
         self.s10 = s10
         self.s11 = s11
         self.s12 = s12
+        self.s13 = s13
+        
+    def build_tech_skills_string(self):
+        token = '* '
+        # initialize the skills string
+        tech_skill_string = "Technical Skills | Proficiency"
+        tech_skill_string += '\n---------------------------------\n'
+        # profesional skills as a list
+        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
+        proficiency_list1 = [4,4,4,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must identical
+        technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
+        for skill, proficiency in technical_skills_dict.items():
+            tech_skill_string += f'\t{skill} | {token*proficiency}\n'
+        tech_skill_string += '\n'
+        return tech_skill_string
+
+# input skills as strings
+technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Troubleshooting', 'Computer Science', 'Operating Systems', 
+                                    'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
+
+class ProfessionalSkills:
+    
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
+        self.s1 = s1
+        self.s2 = s2
+        self.s3 = s3
+        self.s4 = s4
+        self.s5 = s5
+        self.s6 = s6
+        self.s7 = s7
+        self.s8 = s8
+        self.s9 = s9
+        self.s10 = s10
+        self.s11 = s11
+        self.s12 = s12
+        self.s13 = s13
     
     def build_prof_skills_string(self):
         token = '* '
@@ -224,8 +257,8 @@ class ProfessionalSkills:
         prof_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12]
-        proficiency_list1 = [5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must identical
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
+        proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must identical
         professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in professional_skills_dict.items():
             prof_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -233,13 +266,13 @@ class ProfessionalSkills:
         return prof_skill_string
 
 # input skills as strings
-prof_skills = ProfessionalSkills('Teamwork', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
-                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 
-                    'Android OS')
+prof_skills = ProfessionalSkills('Teamwork', 'Customer Service', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
+                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 'Android OS')
 
 # calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
+write_certificates = cert.build_cert_string()
 write_intern = intern.build_intern_string()
 write_prof = prof.build_prof_string()
 write_tech_skills = technical_skills.build_tech_skills_string()
@@ -250,6 +283,7 @@ write_prof_skills = prof_skills.build_prof_skills_string()
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
     writer.write(write_header) # write header string
     writer.write(write_education) # write education string 
+    writer.write(write_certificates)
     writer.write(write_intern) # write intern string
     writer.write(write_prof) # write professional experience 
     writer.write(write_tech_skills)
