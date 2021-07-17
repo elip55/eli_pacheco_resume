@@ -61,22 +61,22 @@ class EducationInfo:
         # initialize education string and school dictionaries
         edu_string = 'EDUCATION:\n' 
         edu_string += '----------\n'
-        school_two = {}
-        school_one = {}
+        grad_school = {}
+        undergrad = {}
         # most recent school on top for formatting purposes
-        school_two[self.school2] = self.degree2 
-        school_two['Expected Grad Date'] = self.grad_year2
-        school_two['GPA'] = self.gpa2
-        for key,value in school_two.items(): # use 'for' loop to add key:value into education string neatly
+        grad_school[self.school2] = self.degree2 
+        grad_school['Expected Grad Date'] = self.grad_year2
+        grad_school['GPA'] = self.gpa2
+        for key,value in grad_school.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
             if key == 'GPA':
                 edu_string += '\n'
         # add first school into dictionary
-        school_one[self.school1] = self.degree1
-        school_one['Graduated'] = self.grad_year1
-        school_one['GPA'] = self.gpa1
-        for key,value in school_one.items(): # use 'for' loop to add key:value into education string neatly
+        undergrad[self.school1] = self.degree1
+        undergrad['Graduated'] = self.grad_year1
+        undergrad['GPA'] = self.gpa1
+        for key,value in undergrad.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
             if key == 'GPA':
@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'University of New Mexico', 'BS, Computer Science', 2023, 3.67)
+                    'University of New Mexico', 'MS, Computer Science', 2024, 3.67)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -116,46 +116,11 @@ class Certificates:
 
 cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
 
-class InternInfo:
-    # initialize intern experience actions
-    def __init__(self, intern_co_title1, intern_action1, intern_action2, intern_action3, 
-                intern_action4, intern_action5, intern_action6):
-        # company 1
-        self.intern_co_title1 = intern_co_title1
-        self.intern_action1 = intern_action1
-        self.intern_action2 = intern_action2
-        self.intern_action3 = intern_action3
-        self.intern_action4 = intern_action4
-        self.intern_action5 = intern_action5
-        self.intern_action6 = intern_action6
-    # function to build the intern block
-    def build_intern_string(self):
-        # initialize internship string
-        intern_string = 'INTERNSHIPS AND CAREER EXPERIENCE:\n'
-        intern_string += '----------------------------------\n'
-        # input co information
-        intern_string += f'\t{self.intern_co_title1}\n' 
-        intern_string += f'\t\t{self.intern_action1}\n\t\t{self.intern_action2}\n\t\t{self.intern_action3}\n\t\t'
-        # split the string for cleaner code
-        intern_string += f'{self.intern_action4}\n\t\t{self.intern_action5}\n\t\t{self.intern_action6}' 
-        intern_string += f'\n\n'
-        return intern_string # return built string for writing
-
-# input intern experience as strings
-# most recent on bottom, reflecting the __init__ constructor
-# NOTE: using \n\t\t for longer actions is recommended
-intern = InternInfo('Apple - Firmware & Software Engineering, January 2021 - June 2021',
-                     '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
-                     '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
-                     '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
-                     '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
-                     '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
-                     '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
-
 class ProfessionalExperience:
     # initiate professional experience actions
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
-                       co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9):
+                       co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9, 
+                       co_title3, pro_action10, pro_action11, pro_action12, pro_action13, pro_action14, pro_action15):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
@@ -169,14 +134,25 @@ class ProfessionalExperience:
         self.pro_action7 = pro_action7
         self.pro_action8 = pro_action8
         self.pro_action9 = pro_action9
+        # third company
+        self.co_title3 = co_title3
+        self.pro_action10 = pro_action10
+        self.pro_action11 = pro_action11
+        self.pro_action12 = pro_action12
+        self.pro_action13 = pro_action13
+        self.pro_action14 = pro_action14
+        self.pro_action15 = pro_action15
     # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
+        prof_string += f'\t{self.co_title3}\n'
+        prof_string += f'\t\t{self.pro_action10}\n\t\t{self.pro_action11}\n\t\t{self.pro_action12}\n\t\t{self.pro_action13}\n\t\t{self.pro_action14}\n\t\t{self.pro_action15}'
+        prof_string += f'\n\n'
         prof_string += f'\t{self.co_title2}\n'
         prof_string += f'\t\t{self.pro_action5}\n\t\t{self.pro_action6}\n\t\t{self.pro_action7}\n\t\t{self.pro_action8}\n\t\t{self.pro_action9}'
-        prof_string += '\n'
+        prof_string += '\n\n'
         prof_string += f'\t{self.co_title1}\n'
         prof_string += f'\t\t{self.pro_action1}\n\t\t{self.pro_action2}\n\t\t{self.pro_action3}\n\t\t{self.pro_action4}'
         prof_string += '\n\n'
@@ -195,7 +171,14 @@ prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 201
                         '- Adapted to a constantly changing product line within hours, or minutes, to better serve our customers and clients.',
                         '- Shipments were received at all hours of the day, every day.  Skills in time management and task prioritization were necessary to delegate tasks accordingly.',
                         '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
-                        '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300 percent.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.')
+                        '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300 percent.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.',
+                        'Apple - Firmware QA & Software Engineering "Internship", January 2021 - June 2021',
+                        '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
+                        '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
+                        '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
+                        '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
+                        '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
+                        '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
 
 class TechnicalSkills:
     
@@ -273,7 +256,6 @@ prof_skills = ProfessionalSkills('Teamwork', 'Customer Service', 'Creativity', '
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
 write_certificates = cert.build_cert_string()
-write_intern = intern.build_intern_string()
 write_prof = prof.build_prof_string()
 write_tech_skills = technical_skills.build_tech_skills_string()
 write_prof_skills = prof_skills.build_prof_skills_string()
@@ -284,7 +266,6 @@ with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization
     writer.write(write_header) # write header string
     writer.write(write_education) # write education string 
     writer.write(write_certificates)
-    writer.write(write_intern) # write intern string
     writer.write(write_prof) # write professional experience 
     writer.write(write_tech_skills)
     writer.write(write_prof_skills) # write skills
