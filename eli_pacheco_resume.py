@@ -198,6 +198,7 @@ class TechnicalSkills:
         self.s13 = s13
         
     def build_tech_skills_string(self):
+        # token for visual proficiency
         token = '* '
         # initialize the skills string
         tech_skill_string = "Technical Skills | Proficiency"
