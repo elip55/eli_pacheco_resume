@@ -61,22 +61,22 @@ class EducationInfo:
         # initialize education string and school dictionaries
         edu_string = 'EDUCATION:\n' 
         edu_string += '----------\n'
-        grad_school = {}
-        undergrad = {}
+        school2 = {}
+        school1 = {}
         # most recent school on top for formatting purposes
-        grad_school[self.school2] = self.degree2 
-        grad_school['Expected Grad Date'] = self.grad_year2
-        grad_school['GPA'] = self.gpa2
-        for key,value in grad_school.items(): # use 'for' loop to add key:value into education string neatly
+        school2[self.school2] = self.degree2 
+        school2['Expected Grad Date'] = self.grad_year2
+        school2['GPA'] = self.gpa2
+        for key,value in school2.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
             if key == 'GPA':
                 edu_string += '\n'
         # add first school into dictionary
-        undergrad[self.school1] = self.degree1
-        undergrad['Graduated'] = self.grad_year1
-        undergrad['GPA'] = self.gpa1
-        for key,value in undergrad.items(): # use 'for' loop to add key:value into education string neatly
+        school1[self.school1] = self.degree1
+        school1['Graduated'] = self.grad_year1
+        school1['GPA'] = self.gpa1
+        for key,value in school1.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
             if key == 'GPA':
