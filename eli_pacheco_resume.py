@@ -99,9 +99,9 @@ class Certificates:
         # initialize cert string
         cert_string = 'CERTIFICATES:\n'
         cert_string += '-------------\n'
-        # initiate dictionary
+        # initiate dictionary and facts as a list
         certificate1 = {}
-        facts = [self.fact1]
+        facts = [] # leave facts empty to add as many as user needs
         certificate1[self.cert1] = self.desc1
         certificate1['Attained'] = self.year1
         for key, value in certificate1.items():
