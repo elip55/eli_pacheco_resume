@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'University of New Mexico', 'BS, Computer Science', 2024, 3.67)
+                    'New Mexico State University', 'MS, Computer Science', 2025, 'tba')
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -120,7 +120,8 @@ class ProfessionalExperience:
     # initiate professional experience actions
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
                        co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9, 
-                       co_title3, pro_action10, pro_action11, pro_action12, pro_action13, pro_action14, pro_action15):
+                       co_title3, pro_action10, pro_action11, pro_action12, pro_action13, pro_action14, pro_action15,
+                       co_title4, pro_action16):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
@@ -142,11 +143,17 @@ class ProfessionalExperience:
         self.pro_action13 = pro_action13
         self.pro_action14 = pro_action14
         self.pro_action15 = pro_action15
+        # fourth company
+        self.co_title4 = co_title4
+        self.pro_action16 = pro_action16
     # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
+        prof_string += f'\t{self.co_title4}\n'
+        prof_string += f'\t\t{self.pro_action16}'
+        prof_string += f'\n\n'
         prof_string += f'\t{self.co_title3}\n'
         prof_string += f'\t\t{self.pro_action10}\n\t\t{self.pro_action11}\n\t\t{self.pro_action12}\n\t\t{self.pro_action13}\n\t\t{self.pro_action14}\n\t\t{self.pro_action15}'
         prof_string += f'\n\n'
@@ -178,7 +185,9 @@ prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 201
                         '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
-                        '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.')
+                        '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
+                        'Lockheed Martin - Engineering Aide, September 2021 - Current', 
+                        '- I am very proud to work for such a wonderful company!')
 
 class TechnicalSkills:
     
