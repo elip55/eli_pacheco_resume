@@ -186,7 +186,7 @@ prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 201
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'Lockheed Martin - Engineering Aide, September 2021 - Current', 
+                        'Lockheed Martin - Systems Engineer, September 2021 - Current', 
                         '- I am very proud to work for such a wonderful company!')
 
 class TechnicalSkills:
