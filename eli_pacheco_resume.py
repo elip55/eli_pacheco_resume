@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'New Mexico State University', 'MS, Computer Science', 2025, 'tba')
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.0)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -168,26 +168,26 @@ class ProfessionalExperience:
 # input intern experience as strings
 # most recent on bottom, reflecting the __init__ constructor
 # NOTE: using \n\t\t for longer actions is recommended
-prof = ProfessionalExperience('Apple - Specialist, November 2015 – January 2019',
+prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
                         '- Learned advanced selling and professional communication techniques through Apple training.',
                         '- Met and exceeded quotas in sales, business connections, customer satisfaction, and attachments for each quarter.',
                         '- Worked in understanding operating systems across devices and companies to suggest the perfect solutions for customers and clients.',
                         '- Introduced businesses to tech solutions including hardware, software, cloud platforms, accessories and Apple services.',
-                        'Apple - Operations, January 2019 - January 2021',
+                        'Apple - Operations, Jan 2019 - Jan 2021',
                         '- Received and shipped thousands of products within the confines of the store.',
                         '- Adapted to a constantly changing product line within hours, or minutes, to better serve our customers and clients.',
                         '- Shipments were received at all hours of the day, every day.  Skills in time management and task prioritization were necessary to delegate tasks accordingly.',
                         '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
                         '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300 percent.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.',
-                        'Apple - Firmware QA & Software Engineering <Internship>, January 2021 - June 2021',
-                        '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
+                        'Apple - Firmware QA & Software Engineering <Internship>, Jan 2021 - June 2021',
+                        '- Using Python, regular expression ansd working with a pair programmer, I conceptualized, wrote, and tested a command line tools which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
                         '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
                         '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'Lockheed Martin - Systems Engineer, September 2021 - Current', 
-                        '- I am very proud to work for such a wonderful company!')
+                        'Lockheed Martin - Systems Engineer, 2021 - Current', 
+                        '- TBD')
 
 class TechnicalSkills:
     
