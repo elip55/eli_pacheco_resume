@@ -186,12 +186,12 @@ prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'Lockheed Martin - Systems Engineer, 2021 - Current', 
-                        '- TBD')
+                        'B&D Industries, Inc. - It Technician <Internship>, Jan 2022 - Current', 
+                        '- TBA')
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -205,6 +205,7 @@ class TechnicalSkills:
         self.s11 = s11
         self.s12 = s12
         self.s13 = s13
+        self.s14 = s14
         
     def build_tech_skills_string(self):
         # token for visual proficiency
@@ -214,8 +215,8 @@ class TechnicalSkills:
         tech_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
-        proficiency_list1 = [4,4,4,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must be identical
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13, self.s14]
+        proficiency_list1 = [4,4,4,3,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must be identical
         technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in technical_skills_dict.items():
             tech_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -223,8 +224,8 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Troubleshooting', 'Computer Science', 'Operating Systems', 
-                                    'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
+technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'MATLAB', 'Troubleshooting', 'Remote Desktop', 'Computer Science', 'Operating Systems', 
+                                    'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS')
 
 class ProfessionalSkills:
     
