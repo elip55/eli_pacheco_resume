@@ -121,7 +121,7 @@ class ProfessionalExperience:
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
                        co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9, 
                        co_title3, pro_action10, pro_action11, pro_action12, pro_action13, pro_action14, pro_action15,
-                       co_title4, pro_action16):
+                       co_title4, pro_action16, pro_action17, pro_action18, pro_action19, pro_action20):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
@@ -146,13 +146,17 @@ class ProfessionalExperience:
         # fourth company
         self.co_title4 = co_title4
         self.pro_action16 = pro_action16
+        self.pro_action17 = pro_action17
+        self.pro_action18 = pro_action18
+        self.pro_action19 = pro_action19
+        self.pro_action20 = pro_action20
     # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
         prof_string += f'\t{self.co_title4}\n'
-        prof_string += f'\t\t{self.pro_action16}'
+        prof_string += f'\t\t{self.pro_action16}\n\t\t{self.pro_action17}\n\t\t{self.pro_action18}\n\t\t{self.pro_action19}\n\t\t{self.pro_action20}'
         prof_string += f'\n\n'
         prof_string += f'\t{self.co_title3}\n'
         prof_string += f'\t\t{self.pro_action10}\n\t\t{self.pro_action11}\n\t\t{self.pro_action12}\n\t\t{self.pro_action13}\n\t\t{self.pro_action14}\n\t\t{self.pro_action15}'
@@ -186,12 +190,16 @@ prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'Lockheed Martin - Systems Engineer, 2021 - Current', 
-                        '- TBD')
+                        'B&D Industries, Inc. - IT Technician <Internship>, Jan 2022 - Current', 
+                        '- Provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, and New York.',
+                        '- Efficiently solved internal customer issues daily with a high success rate.',
+                        '- Responsible for all employee technology setup and maintenance.',
+                        '- Using NinjaRMM, monitored all Windows devices in the company.  Insuring updates and overall heath.',
+                        '- Basic laptop and desktop maintenance:  adding/upgrading RAM, hard drives, and CPUs.')
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -205,6 +213,8 @@ class TechnicalSkills:
         self.s11 = s11
         self.s12 = s12
         self.s13 = s13
+        self.s14 = s14
+        self.s15 = s15
         
     def build_tech_skills_string(self):
         # token for visual proficiency
@@ -214,8 +224,8 @@ class TechnicalSkills:
         tech_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
-        proficiency_list1 = [4,4,4,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must be identical
+                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15]
+        proficiency_list1 = [4,4,4,4,4,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must be identical
         technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in technical_skills_dict.items():
             tech_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -223,8 +233,8 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('git and GitHub', 'jupyter lab', 'Unix shell', 'Python', 'Troubleshooting', 'Computer Science', 'Operating Systems', 
-                                    'Advanced Mathematics', 'SSH Authentication Keys', 'regex', 'YAML', 'SOLIDWORKS', 'MATLAB')
+technical_skills = TechnicalSkills('git and GitHub', 'Jupyter Lab', 'Unix shell', 'RMM', 'Troubleshooting','Python', 'Computer Science', 'Operating Systems', 'MATLAB',
+                                    'Advanced Mathematics', 'Information Technology', 'SSH Authentication Keys', 'Computer Hardware','Regular Expression', 'SOLIDWORKS')
 
 class ProfessionalSkills:
     
