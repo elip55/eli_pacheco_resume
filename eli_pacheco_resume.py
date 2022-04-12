@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.0)
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 'August 2022', 3.0)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -191,15 +191,15 @@ prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
                         'B&D Industries, Inc. - IT Technician <Internship>, Jan 2022 - Current', 
-                        '- Provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, and New York.',
-                        '- Efficiently solved internal customer issues daily with a high success rate.',
-                        '- Responsible for all employee technology setup and maintenance.',
-                        '- Using NinjaRMM, monitored all Windows devices in the company.  Insuring updates and overall heath.',
-                        '- Basic laptop and desktop maintenance:  adding/upgrading RAM, hard drives, and CPUs.')
+                        '- With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
+                        '- Preliminary sys admin duties, configuring all new user accounts in Active Directory and on the Domain.',
+                        '- Initiated all new user hardware and software, ensuring an efficient transition into joining the company.',
+                        '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
+                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.')
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -215,6 +215,8 @@ class TechnicalSkills:
         self.s13 = s13
         self.s14 = s14
         self.s15 = s15
+        self.s16 = s16
+        self.s17 = s17
         
     def build_tech_skills_string(self):
         # token for visual proficiency
@@ -223,9 +225,10 @@ class TechnicalSkills:
         tech_skill_string = "Technical Skills | Proficiency"
         tech_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
-        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15]
-        proficiency_list1 = [4,4,4,4,4,3,3,3,3,3,3,3,2,2,2] #NOTE: These integers directly reflect skills, length must be identical
+        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, self.s7, self.s8,
+                            self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15,
+                            self.s16, self.s17]
+        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
         technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in technical_skills_dict.items():
             tech_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -233,8 +236,9 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('git and GitHub', 'Jupyter Lab', 'Unix shell', 'RMM', 'Troubleshooting','Python', 'Computer Science', 'Operating Systems', 'MATLAB',
-                                    'Advanced Mathematics', 'Information Technology', 'SSH Authentication Keys', 'Computer Hardware','Regular Expression', 'SOLIDWORKS')
+technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Information Technology', 
+                                   'Technology Maintenance', 'sys admin', 'RMM',' Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
+                                   'Computer Hardware', 'Regex', 'SOLIDWORKS')
 
 class ProfessionalSkills:
     
@@ -261,7 +265,7 @@ class ProfessionalSkills:
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
                             self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
-        proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,4,5,3] #NOTE: These integers directly reflect skills, length must be identical
+        proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,5,5,3] #NOTE: These integers directly reflect skills, length must be identical
         professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in professional_skills_dict.items():
             prof_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -269,7 +273,7 @@ class ProfessionalSkills:
         return prof_skill_string
 
 # input skills as strings
-prof_skills = ProfessionalSkills('Teamwork', 'Customer Service', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
+prof_skills = ProfessionalSkills('Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
                     'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 'Android OS')
 
 # calling functions and utilizing classes
