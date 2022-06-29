@@ -116,10 +116,13 @@ class Certificates:
 
 cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
 
+
+
 class ProfessionalExperience:
     # initiate professional experience actions
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4, pro_action5, pro_action6,
-                       co_title2, pro_action1a, pro_action2a, pro_action3a, pro_action4a, pro_action5a):
+                       co_title2, pro_action1a, pro_action2a, pro_action3a, pro_action4a, pro_action5a,
+                       co_title3, pro_action1b):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
@@ -135,6 +138,9 @@ class ProfessionalExperience:
         self.pro_action3a = pro_action3a
         self.pro_action4a = pro_action4a
         self.pro_action5a = pro_action5a
+        # third company
+        self.co_title3 = co_title3
+        self.pro_action1b = pro_action1b
     
     
     # function to build professional block
@@ -142,6 +148,9 @@ class ProfessionalExperience:
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
+        prof_string += f'\t{self.co_title3}\n'
+        prof_string += f'\t\t{self.pro_action1b}\n'
+        prof_string += '\n'
         prof_string += f'\t{self.co_title2}\n'
         prof_string += f'\t\t{self.pro_action1a}\n\t\t{self.pro_action2a}\n\t\t{self.pro_action3a}\n\t\t{self.pro_action4a}\n\t\t{self.pro_action5a}\n\t\t'
         prof_string += '\n'
@@ -150,10 +159,8 @@ class ProfessionalExperience:
         prof_string += '\n\n'
         return prof_string
 
-# input intern experience as strings
-# most recent on bottom, reflecting the __init__ constructor
-# NOTE: using \n\t\t for longer actions is recommended
-prof = ProfessionalExperience('Apple - Firmware QA & Software Engineering <Internship>, Jan 2021 - June 2021',
+prof = ProfessionalExperience(
+                        'Apple - Firmware QA & Software Engineering <Internship>, Jan 2021 - June 2021',
                         '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tools which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
                         '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
                         '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
@@ -165,7 +172,9 @@ prof = ProfessionalExperience('Apple - Firmware QA & Software Engineering <Inter
                         '- Preliminary sys admin duties, configuring all new user accounts in Active Directory and on the Domain.',
                         '- Initiated all new user hardware and software, ensuring an efficient transition into joining the company.',
                         '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
-                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.')
+                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.',
+                        'Lockheed Martin - Engineering Aide, August 2022 - Present',
+                        '#WeAreLM')
 
 class TechnicalSkills:
     
