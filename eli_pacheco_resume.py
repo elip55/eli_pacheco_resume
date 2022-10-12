@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', 'August 2022', 3.0)
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 'August 2022', 3.25)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -237,7 +237,7 @@ class TechnicalSkills:
 
 # input skills as strings
 technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Information Technology', 
-                                   'Technology Maintenance', 'sys admin', 'RMM',' Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
+                                   'Technology Maintenance', 'Sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH', 
                                    'Computer Hardware', 'Regex', 'SOLIDWORKS')
 
 class ProfessionalSkills:
