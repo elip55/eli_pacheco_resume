@@ -199,7 +199,7 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aeorospace Solutions', 'Information Technology', 
+technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Information Technology', 
                                    'Technology Maintenance', 'sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
                                    'Computer Hardware', 'Regex', 'SOLIDWORKS')
 
