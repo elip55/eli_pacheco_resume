@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', '2022', 3.22)
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.22)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -94,35 +94,13 @@ class Certificates:
         self.desc1 = desc1
         self.year1 = year1
         self.fact1 = fact1
-        
-    def build_cert_string(self):
-        # initialize cert string
-        cert_string = 'CERTIFICATES:\n'
-        cert_string += '-------------\n'
-        # initiate dictionary and facts as a list
-        certificate1 = {}
-        facts = [] # leave facts empty to add as many as user needs
-        certificate1[self.cert1] = self.desc1
-        certificate1['Attained'] = self.year1
-        for key, value in certificate1.items():
-            cert_string += f'\t{key}: {value}\n'
-            cert_string += '\t'
-        # create list for facts on certificates
-        facts = [self.fact1]
-        for i in facts:
-            cert_string += f'\t- {i}\n'
-        cert_string += '\n'
-        return cert_string
-
-cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
-
 
 
 class ProfessionalExperience:
     # initiate professional experience actions
     def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4, pro_action5, pro_action6,
                        co_title2, pro_action1a, pro_action2a, pro_action3a, pro_action4a, pro_action5a,
-                       co_title3, pro_action1b):
+                       co_title3, pro_action1b, pro_action2b, pro_action3b):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
@@ -141,6 +119,8 @@ class ProfessionalExperience:
         # third company
         self.co_title3 = co_title3
         self.pro_action1b = pro_action1b
+        self.pro_action2b = pro_action2b
+        self.pro_action3b = pro_action3b
     
     
     # function to build professional block
@@ -149,7 +129,7 @@ class ProfessionalExperience:
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
         prof_string += f'\t{self.co_title3}\n'
-        prof_string += f'\t\t{self.pro_action1b}\n'
+        prof_string += f'\t\t{self.pro_action1b}\n\t\t{self.pro_action2b}\n\t\t{self.pro_action3b}\n'
         prof_string += '\n'
         prof_string += f'\t{self.co_title2}\n'
         prof_string += f'\t\t{self.pro_action1a}\n\t\t{self.pro_action2a}\n\t\t{self.pro_action3a}\n\t\t{self.pro_action4a}\n\t\t{self.pro_action5a}\n\t\t'
@@ -173,12 +153,14 @@ prof = ProfessionalExperience(
                         '- Initiated all new user hardware and software, ensuring an efficient transition into joining the company.',
                         '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
                         '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.',
-                        'Lockheed Martin - Engineering Aide, August 2022 - Present',
-                        '#WeAreLM')
+                        'Lockheed Martin - Vehicle Systems Engineer, August 2022 - Present',
+                        '-	Diligently monitor vehicle systems for any non-nominal behavior, applying time-sensitive solutions across various systems of hardware and software.',
+                        '-	Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
+                        '-	Utilize a wide range of UNIX tools to help process and apply data effectively.')
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -196,6 +178,8 @@ class TechnicalSkills:
         self.s15 = s15
         self.s16 = s16
         self.s17 = s17
+        self.s18 = s18
+        self.s19 = s19
         
     def build_tech_skills_string(self):
         # token for visual proficiency
@@ -206,8 +190,8 @@ class TechnicalSkills:
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, self.s7, self.s8,
                             self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15,
-                            self.s16, self.s17]
-        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
+                            self.s16, self.s17, self.s18, self.s19]
+        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
         technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in technical_skills_dict.items():
             tech_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -215,7 +199,7 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Information Technology', 
+technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aeorospace Solutions', 'Information Technology', 
                                    'Technology Maintenance', 'sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
                                    'Computer Hardware', 'Regex', 'SOLIDWORKS')
 
@@ -258,7 +242,6 @@ prof_skills = ProfessionalSkills('Teamwork', 'Client Development', 'Creativity',
 # calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
-write_certificates = cert.build_cert_string()
 write_prof = prof.build_prof_string()
 write_tech_skills = technical_skills.build_tech_skills_string()
 write_prof_skills = prof_skills.build_prof_skills_string()
@@ -268,7 +251,6 @@ write_prof_skills = prof_skills.build_prof_skills_string()
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
     writer.write(write_header) # write header string
     writer.write(write_education) # write education string 
-    writer.write(write_certificates)
     writer.write(write_prof) # write professional experience 
     writer.write(write_tech_skills)
     writer.write(write_prof_skills) # write skills
