@@ -40,7 +40,7 @@ class HeaderInfo:
         return info
 
 # Input the header information as strings reflecting the __init__ constructor
-header = HeaderInfo('Eli Pacheco', 'Albuquerque, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
+header = HeaderInfo('Eli Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
 class EducationInfo:
     # education institutions can be easily added or deleted in the __init__ constructor and function
@@ -65,7 +65,7 @@ class EducationInfo:
         school1 = {}
         # most recent school on top for formatting purposes
         school2[self.school2] = self.degree2 
-        school2['Expected Grad Date'] = self.grad_year2
+        school2['Graduated'] = self.grad_year2
         school2['GPA'] = self.gpa2
         for key,value in school2.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
@@ -86,7 +86,7 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', 'August 2022', 3.25)
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.22)
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -94,95 +94,52 @@ class Certificates:
         self.desc1 = desc1
         self.year1 = year1
         self.fact1 = fact1
-        
-    def build_cert_string(self):
-        # initialize cert string
-        cert_string = 'CERTIFICATES:\n'
-        cert_string += '-------------\n'
-        # initiate dictionary and facts as a list
-        certificate1 = {}
-        facts = [] # leave facts empty to add as many as user needs
-        certificate1[self.cert1] = self.desc1
-        certificate1['Attained'] = self.year1
-        for key, value in certificate1.items():
-            cert_string += f'\t{key}: {value}\n'
-            cert_string += '\t'
-        # create list for facts on certificates
-        facts = [self.fact1]
-        for i in facts:
-            cert_string += f'\t- {i}\n'
-        cert_string += '\n'
-        return cert_string
 
-cert = Certificates('Google IT support', 'Professional Certificate', 2021, 'Technical Support Fundamentals')
 
 class ProfessionalExperience:
     # initiate professional experience actions
-    def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4,
-                       co_title2, pro_action5, pro_action6, pro_action7, pro_action8, pro_action9, 
-                       co_title3, pro_action10, pro_action11, pro_action12, pro_action13, pro_action14, pro_action15,
-                       co_title4, pro_action16, pro_action17, pro_action18, pro_action19, pro_action20):
+    def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4, pro_action5, pro_action6,
+                       co_title2, pro_action1a, pro_action2a, pro_action3a, pro_action4a, pro_action5a,
+                       co_title3, pro_action1b, pro_action2b, pro_action3b):
         # first company
         self.co_title1 = co_title1
         self.pro_action1 = pro_action1
         self.pro_action2 = pro_action2
         self.pro_action3 = pro_action3
         self.pro_action4 = pro_action4
-        # second company
-        self.co_title2 = co_title2
         self.pro_action5 = pro_action5
         self.pro_action6 = pro_action6
-        self.pro_action7 = pro_action7
-        self.pro_action8 = pro_action8
-        self.pro_action9 = pro_action9
+        # second company
+        self.co_title2 = co_title2
+        self.pro_action1a = pro_action1a
+        self.pro_action2a = pro_action2a
+        self.pro_action3a = pro_action3a
+        self.pro_action4a = pro_action4a
+        self.pro_action5a = pro_action5a
         # third company
         self.co_title3 = co_title3
-        self.pro_action10 = pro_action10
-        self.pro_action11 = pro_action11
-        self.pro_action12 = pro_action12
-        self.pro_action13 = pro_action13
-        self.pro_action14 = pro_action14
-        self.pro_action15 = pro_action15
-        # fourth company
-        self.co_title4 = co_title4
-        self.pro_action16 = pro_action16
-        self.pro_action17 = pro_action17
-        self.pro_action18 = pro_action18
-        self.pro_action19 = pro_action19
-        self.pro_action20 = pro_action20
+        self.pro_action1b = pro_action1b
+        self.pro_action2b = pro_action2b
+        self.pro_action3b = pro_action3b
+    
+    
     # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
         prof_string = 'PROFESSIONAL EXPERIENCE:\n'
         prof_string += '------------------------\n'
-        prof_string += f'\t{self.co_title4}\n'
-        prof_string += f'\t\t{self.pro_action16}\n\t\t{self.pro_action17}\n\t\t{self.pro_action18}\n\t\t{self.pro_action19}\n\t\t{self.pro_action20}'
-        prof_string += f'\n\n'
         prof_string += f'\t{self.co_title3}\n'
-        prof_string += f'\t\t{self.pro_action10}\n\t\t{self.pro_action11}\n\t\t{self.pro_action12}\n\t\t{self.pro_action13}\n\t\t{self.pro_action14}\n\t\t{self.pro_action15}'
-        prof_string += f'\n\n'
+        prof_string += f'\t\t{self.pro_action1b}\n\t\t{self.pro_action2b}\n\t\t{self.pro_action3b}\n'
+        prof_string += '\n'
         prof_string += f'\t{self.co_title2}\n'
-        prof_string += f'\t\t{self.pro_action5}\n\t\t{self.pro_action6}\n\t\t{self.pro_action7}\n\t\t{self.pro_action8}\n\t\t{self.pro_action9}'
-        prof_string += '\n\n'
+        prof_string += f'\t\t{self.pro_action1a}\n\t\t{self.pro_action2a}\n\t\t{self.pro_action3a}\n\t\t{self.pro_action4a}\n\t\t{self.pro_action5a}\n\t\t'
+        prof_string += '\n'
         prof_string += f'\t{self.co_title1}\n'
-        prof_string += f'\t\t{self.pro_action1}\n\t\t{self.pro_action2}\n\t\t{self.pro_action3}\n\t\t{self.pro_action4}'
+        prof_string += f'\t\t{self.pro_action1}\n\t\t{self.pro_action2}\n\t\t{self.pro_action3}\n\t\t{self.pro_action4}\n\t\t{self.pro_action5}\n\t\t{self.pro_action6}'
         prof_string += '\n\n'
         return prof_string
 
-# input intern experience as strings
-# most recent on bottom, reflecting the __init__ constructor
-# NOTE: using \n\t\t for longer actions is recommended
-prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
-                        '- Learned advanced selling and professional communication techniques through Apple training.',
-                        '- Met and exceeded quotas in sales, business connections, customer satisfaction, and attachments for each quarter.',
-                        '- Worked in understanding operating systems across devices and companies to suggest the perfect solutions for customers and clients.',
-                        '- Introduced businesses to tech solutions including hardware, software, cloud platforms, accessories and Apple services.',
-                        'Apple - Operations, Jan 2019 - Jan 2021',
-                        '- Received and shipped thousands of products within the confines of the store.',
-                        '- Adapted to a constantly changing product line within hours, or minutes, to better serve our customers and clients.',
-                        '- Shipments were received at all hours of the day, every day.  Skills in time management and task prioritization were necessary to delegate tasks accordingly.',
-                        '- Collaborated creative solutions, with a team, to place a constantly expanding product line into dimensions that remain the same.',
-                        '- Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300 percent.\n\t\t  This allowed us to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.\n\t\t  This led to an increase in the floorspace area for more shipments, products, and physical movement.',
+prof = ProfessionalExperience(
                         'Apple - Firmware QA & Software Engineering <Internship>, Jan 2021 - June 2021',
                         '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tools which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
                         '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
@@ -190,16 +147,20 @@ prof = ProfessionalExperience('Apple - Specialist, Nov 2015 – Jan 2019',
                         '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
                         '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
                         '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'B&D Industries, Inc. - IT Technician <Internship>, Jan 2022 - Current', 
+                        'B&D Industries, Inc. - IT Technician <Internship>, Jan 2022 - May 2022', 
                         '- With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
                         '- Preliminary sys admin duties, configuring all new user accounts in Active Directory and on the Domain.',
                         '- Initiated all new user hardware and software, ensuring an efficient transition into joining the company.',
                         '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
-                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.')
+                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.',
+                        'Lockheed Martin - Vehicle Systems Engineer, August 2022 - Present',
+                        '-	Diligently monitor vehicle systems for any non-nominal behavior, applying time-sensitive solutions across various systems of hardware and software.',
+                        '-	Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
+                        '-	Utilize a wide range of UNIX tools to help process and apply data effectively.')
 
 class TechnicalSkills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17):
+    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19):
         self.s1 = s1
         self.s2 = s2
         self.s3 = s3
@@ -217,6 +178,8 @@ class TechnicalSkills:
         self.s15 = s15
         self.s16 = s16
         self.s17 = s17
+        self.s18 = s18
+        self.s19 = s19
         
     def build_tech_skills_string(self):
         # token for visual proficiency
@@ -227,8 +190,8 @@ class TechnicalSkills:
         # profesional skills as a list
         prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, self.s7, self.s8,
                             self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15,
-                            self.s16, self.s17]
-        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
+                            self.s16, self.s17, self.s18, self.s19]
+        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
         technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in technical_skills_dict.items():
             tech_skill_string += f'\t{skill} | {token*proficiency}\n'
@@ -236,8 +199,8 @@ class TechnicalSkills:
         return tech_skill_string
 
 # input skills as strings
-technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Information Technology', 
-                                   'Technology Maintenance', 'Sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH', 
+technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aeorospace Solutions', 'Information Technology', 
+                                   'Technology Maintenance', 'sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
                                    'Computer Hardware', 'Regex', 'SOLIDWORKS')
 
 class ProfessionalSkills:
@@ -279,7 +242,6 @@ prof_skills = ProfessionalSkills('Teamwork', 'Client Development', 'Creativity',
 # calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
-write_certificates = cert.build_cert_string()
 write_prof = prof.build_prof_string()
 write_tech_skills = technical_skills.build_tech_skills_string()
 write_prof_skills = prof_skills.build_prof_skills_string()
@@ -289,7 +251,6 @@ write_prof_skills = prof_skills.build_prof_skills_string()
 with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
     writer.write(write_header) # write header string
     writer.write(write_education) # write education string 
-    writer.write(write_certificates)
     writer.write(write_prof) # write professional experience 
     writer.write(write_tech_skills)
     writer.write(write_prof_skills) # write skills
