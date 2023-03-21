@@ -45,25 +45,47 @@ header = HeaderInfo('Eli Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pache
 class EducationInfo:
     # education institutions can be easily added or deleted in the __init__ constructor and function
     def __init__(self, school1, degree1, grad_year1, gpa1, 
-                       school2, degree2, grad_year2, gpa2):
+                       school2, degree2, grad_year2, gpa2,
+                       school3, degree3, grad_year3, gpa3):
         # school 1
         self.school1 = school1
         self.degree1 = degree1
         self.grad_year1 = grad_year1
         self.gpa1 = gpa1
-        # school2 (most recent)
+        # school2
         self.school2 = school2
         self.degree2 = degree2
         self.grad_year2 = grad_year2
         self.gpa2 = gpa2
-    
+        # school3 (most recent)
+        self.school3 = school3
+        self.degree3 = degree3
+        self.grad_year3 = grad_year3
+        self.gpa3 = gpa3
+        
     def build_edu_string(self):
         # initialize education string and school dictionaries
         edu_string = 'EDUCATION:\n' 
         edu_string += '----------\n'
         school2 = {}
         school1 = {}
+        school3 = {}
+        # Build the string
+        school3[self.school3] = self.degree3
+        school3['Expected Graduation'] = self.grad_year3
+        school3['GPA'] = self.gpa3
         # most recent school on top for formatting purposes
+        for key,value in school3.items(): # use 'for' loop to add key:value into education string neatly
+            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
+            edu_string += '\t'
+            if key == 'GPA':
+                edu_string += '\n'
+        for key,value in school2.items(): # use 'for' loop to add key:value into education string neatly
+            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
+            edu_string += '\t'
+            if key == 'GPA':
+                edu_string += '\n'
+        # add second school into dictionary
         school2[self.school2] = self.degree2 
         school2['Graduated'] = self.grad_year2
         school2['GPA'] = self.gpa2
@@ -86,7 +108,8 @@ class EducationInfo:
 # input education experience as strings, integers, and floats
 # most recent on bottom, reflecting the __init__ constructor
 edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.22)
+                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.22,
+                    'CU Boulder', 'MS - Data Science', 2024, 'N/A' )
 class Certificates:
     # initialize certificate actions
     def __init__(self, cert1, desc1, year1, fact1):
@@ -154,9 +177,9 @@ prof = ProfessionalExperience(
                         '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
                         '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.',
                         'Lockheed Martin - Vehicle Systems Engineer, August 2022 - Present',
-                        '-	Diligently monitor vehicle systems for any non-nominal behavior, applying time-sensitive solutions across various systems of hardware and software.',
-                        '-	Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
-                        '-	Utilize a wide range of UNIX tools to help process and apply data effectively.')
+                        '- Diligently monitor vehicle systems for any non-nominal behavior, applying time-sensitive solutions across various systems of hardware and software.',
+                        '- Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
+                        '- Utilize a wide range of UNIX tools to help process and apply data effectively.')
 
 class TechnicalSkills:
     
