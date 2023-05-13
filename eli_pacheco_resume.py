@@ -181,101 +181,57 @@ prof = ProfessionalExperience(
                         '- Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
                         '- Utilize a wide range of UNIX tools to help process and apply data effectively.')
 
-class TechnicalSkills:
+class Skills:
     
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19):
-        self.s1 = s1
-        self.s2 = s2
-        self.s3 = s3
-        self.s4 = s4
-        self.s5 = s5
-        self.s6 = s6
-        self.s7 = s7
-        self.s8 = s8
-        self.s9 = s9
-        self.s10 = s10
-        self.s11 = s11
-        self.s12 = s12
-        self.s13 = s13
-        self.s14 = s14
-        self.s15 = s15
-        self.s16 = s16
-        self.s17 = s17
-        self.s18 = s18
-        self.s19 = s19
+    def __init__(self, skillset, arr1, arr2):
+        self.l1 = arr1
+        self.l2 = arr2
+        self.skill_title = skillset
+        if len(arr1) != len(arr2):
+            print('Lists MUST be identical length!')
+            exit()
         
-    def build_tech_skills_string(self):
-        # token for visual proficiency
+    def build_skills_string(self):
         token = '* '
         # initialize the skills string
-        tech_skill_string = "Technical Skills | Proficiency"
-        tech_skill_string += '\n---------------------------------\n'
-        # profesional skills as a list
-        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, self.s7, self.s8,
-                            self.s9, self.s10, self.s11, self.s12, self.s13, self.s14, self.s15,
-                            self.s16, self.s17, self.s18, self.s19]
-        proficiency_list1 = [5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] #NOTE: These integers directly reflect skills, length must be identical
-        technical_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
-        for skill, proficiency in technical_skills_dict.items():
-            tech_skill_string += f'\t{skill} | {token*proficiency}\n'
-        tech_skill_string += '\n'
-        return tech_skill_string
-
-# input skills as strings
-technical_skills = TechnicalSkills('Advanced Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Information Technology', 
-                                   'Technology Maintenance', 'sys admin', 'RMM','Python', 'MATLAB', 'Computer Science', 'Operating Systems', 'SSH Authentication Keys', 
-                                   'Computer Hardware', 'Regex', 'SOLIDWORKS')
-
-class ProfessionalSkills:
-    
-    def __init__(self, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13):
-        self.s1 = s1
-        self.s2 = s2
-        self.s3 = s3
-        self.s4 = s4
-        self.s5 = s5
-        self.s6 = s6
-        self.s7 = s7
-        self.s8 = s8
-        self.s9 = s9
-        self.s10 = s10
-        self.s11 = s11
-        self.s12 = s12
-        self.s13 = s13
-    
-    def build_prof_skills_string(self):
-        token = '* '
-        # initialize the skills string
-        prof_skill_string = "Professional Skills | Proficiency"
+        prof_skill_string = f"{self.skill_title} | Proficiency"
         prof_skill_string += '\n---------------------------------\n'
         # profesional skills as a list
-        prof_skills_list = [self.s1, self.s2, self.s3, self.s4, self.s5, self.s6, 
-                            self.s7, self.s8, self.s9, self.s10, self.s11, self.s12, self.s13]
-        proficiency_list1 = [5,5,5,5,5,5,5,5,5,5,5,5,3] #NOTE: These integers directly reflect skills, length must be identical
+        prof_skills_list = self.l1
+        proficiency_list1 = self.l2 #NOTE: These integers directly reflect skills, length must be identical
         professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
         for skill, proficiency in professional_skills_dict.items():
             prof_skill_string += f'\t{skill} | {token*proficiency}\n'
         prof_skill_string += '\n'
         return prof_skill_string
 
-# input skills as strings
-prof_skills = ProfessionalSkills('Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Client Development', 'Professional Communication', 
-                    'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows', 'iOS', 'Android OS')
+# first input titles of each list
+tech_title = 'Technical Skills'
+prof_title = 'Professional Skills'
+# then input skills as a list of strings
+tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Anomaly Response', 'SSH', 'Python']
+prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows' ]
+# enter proficienty as a list of integers
+tech_proficiency = [5,4,4,4,4,4,3,3,3,3]
+prof_proficiency = [5,5,5,5,5,5,5,4,4,4]
+# finally, use the class Skills
+tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
+prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
 
 # calling functions and utilizing classes
 write_header = header.build_header_string()
 write_education = edu.build_edu_string()
 write_prof = prof.build_prof_string()
-write_tech_skills = technical_skills.build_tech_skills_string()
-write_prof_skills = prof_skills.build_prof_skills_string()
+write_tech_skills = tech_skillset.build_skills_string()
+write_prof_skills = prof_skillset.build_skills_string()
 
 # write the .txt file 
 # change the name of the .txt file as needed
-with open('eli_pacheco_resume.txt', 'w') as writer: # with open for optimization 
-    writer.write(write_header) # write header string
-    writer.write(write_education) # write education string 
-    writer.write(write_prof) # write professional experience 
-    writer.write(write_tech_skills)
-    writer.write(write_prof_skills) # write skills
+with open('eli_pacheco_resume.txt', 'w') as mywriter: # with open for optimization
+    mywriter.write(write_header)
+    mywriter.write(write_education)
+    mywriter.write(write_prof)
+    mywriter.write(write_tech_skills)
+    mywriter.write(write_prof_skills)
 
 # I am open to any and all feedback: eli.pacheco55@outlook.com
