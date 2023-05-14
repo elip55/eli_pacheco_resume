@@ -29,76 +29,43 @@
 
 class HeaderInfo:
     
-    def __init__(self, name, location, pn, email):
-        self.name = name
-        self.location = location
-        self.pn = pn
-        self.email = email
+    def __init__(self, header_strings):
+        self.arr = header_strings
     
     def build_header_string(self):
-        info = f'\n\t{self.name}\n\t{self.location}\n\t{self.pn}\n\t{self.email}\n\n' # create the header string
-        return info
+        header_string = '\n'
+        for i in self.arr:
+            header_string += f'{i}\n'
+        header_string += '\n'
+        return header_string
 
-# Input the header information as strings reflecting the __init__ constructor
-header = HeaderInfo('Eli Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pacheco55@outlook.com')
 
-class EducationInfo:
+# input header info as any desired list of strings
+header_strings = ['Eli M. Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pacheco55@outlook.com']
+header = HeaderInfo(header_strings)
+
+class Education:
     # education institutions can be easily added or deleted in the __init__ constructor and function
-    def __init__(self, school1, degree1, grad_year1, gpa1, 
-                       school2, degree2, grad_year2, gpa2,
-                       school3, degree3, grad_year3, gpa3):
+    def __init__(self, school, degree, graduated, grad_year, gpa):
         # school 1
-        self.school1 = school1
-        self.degree1 = degree1
-        self.grad_year1 = grad_year1
-        self.gpa1 = gpa1
-        # school2
-        self.school2 = school2
-        self.degree2 = degree2
-        self.grad_year2 = grad_year2
-        self.gpa2 = gpa2
-        # school3 (most recent)
-        self.school3 = school3
-        self.degree3 = degree3
-        self.grad_year3 = grad_year3
-        self.gpa3 = gpa3
+        self.school = school
+        self.degree = degree
+        self.graduated = graduated
+        self.grad_year = grad_year
+        self.gpa = gpa
         
     def build_edu_string(self):
         # initialize education string and school dictionaries
-        edu_string = 'EDUCATION:\n' 
-        edu_string += '----------\n'
-        school2 = {}
-        school1 = {}
-        school3 = {}
+        edu_string = ''
+        school = {}
         # Build the string
-        school3[self.school3] = self.degree3
-        school3['Expected Graduation'] = self.grad_year3
-        school3['GPA'] = self.gpa3
-        # most recent school on top for formatting purposes
-        for key,value in school3.items(): # use 'for' loop to add key:value into education string neatly
-            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
-            edu_string += '\t'
-            if key == 'GPA':
-                edu_string += '\n'
-        for key,value in school2.items(): # use 'for' loop to add key:value into education string neatly
-            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
-            edu_string += '\t'
-            if key == 'GPA':
-                edu_string += '\n'
-        # add second school into dictionary
-        school2[self.school2] = self.degree2 
-        school2['Graduated'] = self.grad_year2
-        school2['GPA'] = self.gpa2
-        for key,value in school2.items(): # use 'for' loop to add key:value into education string neatly
-            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
-            edu_string += '\t'
-            if key == 'GPA':
-                edu_string += '\n'
-        # add first school into dictionary
-        school1[self.school1] = self.degree1
-        school1['Graduated'] = self.grad_year1
-        school1['GPA'] = self.gpa1
-        for key,value in school1.items(): # use 'for' loop to add key:value into education string neatly
+        school[self.school] = self.degree
+        if self.graduated:
+            school['Graduated'] = self.grad_year
+        else:
+            school['Expected Grad Year'] = self.grad_year
+        school['GPA'] = self.gpa
+        for key,value in school.items(): # use 'for' loop to add key:value into education string neatly
             edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
             edu_string += '\t'
             if key == 'GPA':
@@ -106,80 +73,60 @@ class EducationInfo:
         return edu_string
 
 # input education experience as strings, integers, and floats
-# most recent on bottom, reflecting the __init__ constructor
-edu = EducationInfo('New Mexico State University', 'BA, Digital Media', 2015, 3.2,
-                    'Central New Mexico University', 'AS, Mathematical Sciences', 2022, 3.22,
-                    'CU Boulder', 'MS - Data Science', 2024, 'N/A' )
-class Certificates:
-    # initialize certificate actions
-    def __init__(self, cert1, desc1, year1, fact1):
-        self.cert1 = cert1
-        self.desc1 = desc1
-        self.year1 = year1
-        self.fact1 = fact1
+# school name, degree, graduated?(true/false value), year graduated (or will graduate), GPA
+school1 = Education('New Mexico State University', 'BA, Digital Media', True, 2015, 3.2)
+school2 = Education('Central New Mexico University', 'AS, Mathematical Sciences', True, 2022, 3.22)
+school3 = Education('CU Boulder', 'MS - Data Science', False, 2025, 4.0)
 
 
 class ProfessionalExperience:
     # initiate professional experience actions
-    def __init__(self, co_title1, pro_action1, pro_action2, pro_action3, pro_action4, pro_action5, pro_action6,
-                       co_title2, pro_action1a, pro_action2a, pro_action3a, pro_action4a, pro_action5a,
-                       co_title3, pro_action1b, pro_action2b, pro_action3b):
-        # first company
-        self.co_title1 = co_title1
-        self.pro_action1 = pro_action1
-        self.pro_action2 = pro_action2
-        self.pro_action3 = pro_action3
-        self.pro_action4 = pro_action4
-        self.pro_action5 = pro_action5
-        self.pro_action6 = pro_action6
-        # second company
-        self.co_title2 = co_title2
-        self.pro_action1a = pro_action1a
-        self.pro_action2a = pro_action2a
-        self.pro_action3a = pro_action3a
-        self.pro_action4a = pro_action4a
-        self.pro_action5a = pro_action5a
-        # third company
-        self.co_title3 = co_title3
-        self.pro_action1b = pro_action1b
-        self.pro_action2b = pro_action2b
-        self.pro_action3b = pro_action3b
-    
+    def __init__(self, company_name, job_title, internship, dates, responsibilities):
+        self.co = company_name
+        self.title = job_title
+        self.intern = internship
+        self.dates = dates
+        self.block = responsibilities
     
     # function to build professional block
     def build_prof_string(self):
         # initialize the professional experience string
-        prof_string = 'PROFESSIONAL EXPERIENCE:\n'
-        prof_string += '------------------------\n'
-        prof_string += f'\t{self.co_title3}\n'
-        prof_string += f'\t\t{self.pro_action1b}\n\t\t{self.pro_action2b}\n\t\t{self.pro_action3b}\n'
+        prof_string = f'{self.co} - {self.title} '
+        if self.intern:
+            prof_string += '<INTERNSHIP>,'
+        prof_string += f'{self.dates}\n'
+        for i in self.block:
+            prof_string += f'\t- {i}\n'
         prof_string += '\n'
-        prof_string += f'\t{self.co_title2}\n'
-        prof_string += f'\t\t{self.pro_action1a}\n\t\t{self.pro_action2a}\n\t\t{self.pro_action3a}\n\t\t{self.pro_action4a}\n\t\t{self.pro_action5a}\n\t\t'
-        prof_string += '\n'
-        prof_string += f'\t{self.co_title1}\n'
-        prof_string += f'\t\t{self.pro_action1}\n\t\t{self.pro_action2}\n\t\t{self.pro_action3}\n\t\t{self.pro_action4}\n\t\t{self.pro_action5}\n\t\t{self.pro_action6}'
-        prof_string += '\n\n'
         return prof_string
 
-prof = ProfessionalExperience(
-                        'Apple - Firmware QA & Software Engineering <Internship>, Jan 2021 - June 2021',
-                        '- Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tools which parsed through firmware logs and extracted relevant data.\n\t\t  The parsed data would then be written into .txt and .csv files accordingly.',
-                        '- Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
-                        '- Tasked with optimizing the code, specifically when writing the output files.\n\t\t  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.\n\t\t  I concluded the function optimization by implementing code that was 100-500 percent faster than the csv module.',
-                        '- Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.\n\t\t  This meant a working understanding of circuits, electronic symbols, and general computer science.',
-                        '- All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.\n\t\t  The number of branches on projects ranged from 4 to 100+.',
-                        '- Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.',
-                        'B&D Industries, Inc. - IT Technician <Internship>, Jan 2022 - May 2022', 
-                        '- With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
-                        '- Preliminary sys admin duties, configuring all new user accounts in Active Directory and on the Domain.',
-                        '- Initiated all new user hardware and software, ensuring an efficient transition into joining the company.',
-                        '- Using RMM, monitored all iOS and Windows devices in the company ensuring updates, overall health, and necessary applications.',
-                        '- Responsible for hardware maintenance and upgrades including tower, laptop, and network upgrades.',
-                        'Lockheed Martin - Vehicle Systems Engineer, August 2022 - Present',
-                        '- Diligently monitor vehicle systems for any non-nominal behavior, applying time-sensitive solutions across various systems of hardware and software.',
-                        '- Collaborate with a cross-country and diverse team to achieve resolutions for complex engineering problems.',
-                        '- Utilize a wide range of UNIX tools to help process and apply data effectively.')
+
+# NOTE:  I work on job responsibilities first so that i can add the array later
+
+r1 = ['Diligently monitor overhead vehicle systems for any non-nominal behavior.',
+     'Obtained certifications to become highly skilled in anomaly response and resolution.',
+     'Apply mission saving solutions across various systems of hardware and software for 24/7 flight operations.',
+     'Utilize a wide range of UNIX tools to help process and apply data effectively.']
+r2 = ['With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
+      'Sys admin duties:  Configured new user accounts in Active Directory and on the Domain, assigned software licenses, and reset accounts/passwords.',
+      'Initiated new user hardware and software, ensuring an efficient transition into joining the company.',
+      'Using RMM, monitored all iOS and Windows devices in the company.  Confirmed overall health while pushing updates and applications.',
+      'Responsible for hardware maintenance and upgrades including tower and laptop upgrades.',
+      'To ensure future efficiency, created rubrics for future interns and employees to follow while ramping up in IT.']
+r3 = ['Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.  The parsed data would then be written into .txt and .csv files accordingly.',
+      'Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
+      'Tasked with optimizing the code, specifically when writing the output files.  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.  I concluded the function optimization by implementing code that was >100% faster than the .csv module.',
+      'Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.',
+      'All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.  The number of branches on projects ranged from 4 to 100+.',
+      'Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.']
+
+"""set each company's header correctly according to the constructor:
+ all should be strings:
+ company name, job title, internship (true/false value), dates worked"""
+company1 = ProfessionalExperience('Lockheed Martin', 'Vehicle Systems Engineer', False, 'August 2022 - Present', r1)
+company2 = ProfessionalExperience('B&D Industries, INC.', 'IT Technician', True, 'Jan 2022 - June 2022', r2)
+company3 = ProfessionalExperience('Apple', 'Firmware QA & Software Engineering', True, 'Jan 2021 - June 2021', r3)
+
 
 class Skills:
     
@@ -220,8 +167,14 @@ prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
 
 # calling functions and utilizing classes
 write_header = header.build_header_string()
-write_education = edu.build_edu_string()
-write_prof = prof.build_prof_string()
+edu_title_block = 'EDUCATION:\n-----------\n' 
+write_education1 = school3.build_edu_string()
+write_education2 = school2.build_edu_string()
+write_education3 = school1.build_edu_string()
+prof_title_block = 'PROFESSIONAL EXPERIENCE:\n------------------------\n'
+write_company1 = company1.build_prof_string()
+write_company2 = company2.build_prof_string()
+write_company3 = company3.build_prof_string()
 write_tech_skills = tech_skillset.build_skills_string()
 write_prof_skills = prof_skillset.build_skills_string()
 
@@ -229,8 +182,14 @@ write_prof_skills = prof_skillset.build_skills_string()
 # change the name of the .txt file as needed
 with open('eli_pacheco_resume.txt', 'w') as mywriter: # with open for optimization
     mywriter.write(write_header)
-    mywriter.write(write_education)
-    mywriter.write(write_prof)
+    mywriter.write(edu_title_block)
+    mywriter.write(write_education1)
+    mywriter.write(write_education2)
+    mywriter.write(write_education3)
+    mywriter.write(prof_title_block)
+    mywriter.write(write_company1)
+    mywriter.write(write_company2)
+    mywriter.write(write_company3)
     mywriter.write(write_tech_skills)
     mywriter.write(write_prof_skills)
 
