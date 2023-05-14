@@ -166,6 +166,7 @@ tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
 prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
 
 # calling functions and utilizing classes
+# thinkg of this as writing your resume, you can organize it however you want right here
 write_header = header.build_header_string()
 edu_title_block = 'EDUCATION:\n-----------\n' 
 write_education1 = school3.build_edu_string()
