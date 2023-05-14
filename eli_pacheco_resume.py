@@ -135,7 +135,7 @@ class Skills:
         self.l2 = arr2
         self.skill_title = skillset
         if len(arr1) != len(arr2):
-            print('Lists MUST be identical length!')
+            print('Lists MUST be identical length!\nSee line 138')
             exit()
         
     def build_skills_string(self):
