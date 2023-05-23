@@ -17,14 +17,11 @@
 # The .txt document will be written into the directory in which it is interpreted.
 # -----------------------
 
-# the order of classes are as follows: 
+# the order of classes are as follows:
 # header
 # education
-# certificates
-# internships and career experience
 # professional experience
-# technical skills
-# professional skills
+# skills
 # edit each class as needed
 
 class HeaderInfo:
@@ -135,7 +132,7 @@ class Skills:
         self.l2 = arr2
         self.skill_title = skillset
         if len(arr1) != len(arr2):
-            print('Lists MUST be identical length!\nSee line 138')
+            print('Lists MUST be identical length!\nSee class "SKILLS" for why this is the case')
             exit()
         
     def build_skills_string(self):
@@ -166,7 +163,7 @@ tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
 prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
 
 # calling functions and utilizing classes
-# thinkg of this as writing your resume, you can organize it however you want right here
+# think of this as writing your resume, you can organize it however you want right here
 write_header = header.build_header_string()
 edu_title_block = 'EDUCATION:\n-----------\n' 
 write_education1 = school3.build_edu_string()
