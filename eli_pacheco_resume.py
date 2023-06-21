@@ -90,10 +90,10 @@ class ProfessionalExperience:
         # initialize the professional experience string
         prof_string = f'{self.co} - {self.title} '
         if self.intern:
-            prof_string += '<INTERNSHIP>,'
-        prof_string += f'{self.dates}\n'
+            prof_string += '<INTERNSHIP> '
+        prof_string += f', {self.dates}\n'
         for i in self.block:
-            prof_string += f'\t- {i}\n'
+            prof_string += f'\t - {i}\n'
         prof_string += '\n'
         return prof_string
 
@@ -103,7 +103,7 @@ class ProfessionalExperience:
 r1 = ['Diligently monitor overhead vehicle systems for any non-nominal behavior.',
      'Obtained certifications to become highly skilled in anomaly response and resolution.',
      'Apply mission saving solutions across various systems of hardware and software for 24/7 flight operations.',
-     'Utilize a wide range of UNIX tools to help process and apply data effectively.']
+     'Utilize a wide range of UNIX tools to process, troubleshoot, and apply data effectively.']
 r2 = ['With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
       'Sys admin duties:  Configured new user accounts in Active Directory and on the Domain, assigned software licenses, and reset accounts/passwords.',
       'Initiated new user hardware and software, ensuring an efficient transition into joining the company.',
@@ -116,6 +116,9 @@ r3 = ['Using Python, regular expression and working with a pair programmer, I co
       'Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.',
       'All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.  The number of branches on projects ranged from 4 to 100+.',
       'Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.']
+r4 = ['Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300%.  This allowed to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.  This led to an increase in the floorspace area for more shipments, products, and physical movement.',
+     'Learned advanced selling and professional communication techniques through Apple training. ']
+
 
 """set each company's header correctly according to the constructor:
  all should be strings:
@@ -123,6 +126,7 @@ r3 = ['Using Python, regular expression and working with a pair programmer, I co
 company1 = ProfessionalExperience('Lockheed Martin', 'Vehicle Systems Engineer', False, 'August 2022 - Present', r1)
 company2 = ProfessionalExperience('B&D Industries, INC.', 'IT Technician', True, 'Jan 2022 - June 2022', r2)
 company3 = ProfessionalExperience('Apple', 'Firmware QA & Software Engineering', True, 'Jan 2021 - June 2021', r3)
+company4 = ProfessionalExperience('Apple', 'Specialist', False, 'Nov 2015 - Jan 2021', r4)
 
 
 class Skills:
@@ -153,11 +157,11 @@ class Skills:
 tech_title = 'Technical Skills'
 prof_title = 'Professional Skills'
 # then input skills as a list of strings
-tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Anomaly Response', 'SSH', 'Python']
+tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Anomaly Response', 'SSH', 'Python', 'Sys Aadmin', 'Hardware Maintenance']
 prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows' ]
 # enter proficienty as a list of integers
-tech_proficiency = [5,4,4,4,4,4,3,3,3,3]
-prof_proficiency = [5,5,5,5,5,5,5,4,4,4]
+tech_proficiency = [4,4,4,4,4,4,3,3,3,3,3,3]
+prof_proficiency = [5,5,5,5,5,5,5,5,5,4]
 # finally, use the class Skills
 tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
 prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
@@ -173,6 +177,7 @@ prof_title_block = 'PROFESSIONAL EXPERIENCE:\n------------------------\n'
 write_company1 = company1.build_prof_string()
 write_company2 = company2.build_prof_string()
 write_company3 = company3.build_prof_string()
+write_company4 = company4.build_prof_string()
 write_tech_skills = tech_skillset.build_skills_string()
 write_prof_skills = prof_skillset.build_skills_string()
 
@@ -188,6 +193,7 @@ with open('eli_pacheco_resume.txt', 'w') as mywriter: # with open for optimizati
     mywriter.write(write_company1)
     mywriter.write(write_company2)
     mywriter.write(write_company3)
+    mywriter.write(write_company4)
     mywriter.write(write_tech_skills)
     mywriter.write(write_prof_skills)
 
