@@ -99,24 +99,24 @@ class ProfessionalExperience:
 
 
 # NOTE:  I work on job responsibilities first so that i can add the array later
-
+r0 = ['Test and perform on console activities involving satellites during launch, early and long-term orbit operations.',
+      'Identify areas of concern across multiple systems of hardware and software and troubleshoot solutions in real-time.',
+      'Plan and configure communications support while monitoring and reviewing telemetry data.',
+      'Advise various teams of failures, degradation, and potential recovery procedures.',
+      'Conceive and build PowerShell and UNIX tools to extract, organize and display streams of data efficiently.',
+      'Support to varying states of operations, further obtaining certifications to solidify my skills in anomaly response and resolution.']
 r1 = ['Diligently monitor overhead vehicle systems for any non-nominal behavior.',
      'Obtained certifications to become highly skilled in anomaly response and resolution.',
      'Apply mission saving solutions across various systems of hardware and software for 24/7 flight operations.',
      'Utilize a wide range of UNIX tools to process, troubleshoot, and apply data effectively.']
 r2 = ['With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
-      'Sys admin duties:  Configured new user accounts in Active Directory and on the Domain, assigned software licenses, and reset accounts/passwords.',
-      'Initiated new user hardware and software, ensuring an efficient transition into joining the company.',
       'Using RMM, monitored all iOS and Windows devices in the company.  Confirmed overall health while pushing updates and applications.',
-      'Responsible for hardware maintenance and upgrades including tower and laptop upgrades.',
       'To ensure future efficiency, created rubrics for future interns and employees to follow while ramping up in IT.']
 r3 = ['Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.  The parsed data would then be written into .txt and .csv files accordingly.',
-      'Our tool was tested daily, directly in the UNIX shell, checking for software bugs or discrepancies within regex and firmware logs.',
       'Tasked with optimizing the code, specifically when writing the output files.  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.  I concluded the function optimization by implementing code that was >100% faster than the .csv module.',
       'Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.',
-      'All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.  The number of branches on projects ranged from 4 to 100+.',
-      'Built and maintained professional relationships across engineering, marketing, and business relations teams to achieve a common goal.']
-r4 = ['Using simple mathematics, I devised a strategy to utilize every inch of possible space, in the bays, while the iPhone product line grew by 300%.  This allowed to efficiently have product readily available while eliminating the necessity to build more shelves for the expansion.  This led to an increase in the floorspace area for more shipments, products, and physical movement.',
+      'All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.  The number of branches on projects ranged from 4 to 100+.']
+r4 = ['Responsible for the entirety of the stores inventory being available quickly and efficiently.',
      'Learned advanced selling and professional communication techniques through Apple training. ']
 
 
@@ -157,11 +157,11 @@ class Skills:
 tech_title = 'Technical Skills'
 prof_title = 'Professional Skills'
 # then input skills as a list of strings
-tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Aerospace Solutions', 'Anomaly Response', 'SSH', 'Python', 'Sys Aadmin', 'Hardware Maintenance']
-prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Microsoft Office Suite', 'macOS', 'Windows' ]
+tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Operations', 'Anomaly Response', 'SSH', 'Python', 'Software Testing and QA']
+prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Apple Ecosystem', 'Windows OS']
 # enter proficienty as a list of integers
-tech_proficiency = [4,4,4,4,4,4,3,3,3,3,3,3]
-prof_proficiency = [5,5,5,5,5,5,5,5,5,4]
+tech_proficiency = [4,4,4,4,4,4,3,3,3,3,3]
+prof_proficiency = [5,5,5,5,5,5,5,5,5]
 # finally, use the class Skills
 tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
 prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
