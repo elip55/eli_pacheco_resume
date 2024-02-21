@@ -17,187 +17,38 @@
 # The .txt document will be written into the directory in which it is interpreted.
 # -----------------------
 
-# the order of classes are as follows:
-# header
-# education
-# professional experience
-# skills
-# edit each class as needed
+class build_strings:
 
-class HeaderInfo:
-    
     def __init__(self, header_strings):
         self.arr = header_strings
     
     def build_header_string(self):
+        # first skill is a simple for loop
         header_string = '\n'
         for i in self.arr:
             header_string += f'{i}\n'
         header_string += '\n'
         return header_string
+    
+    def build_edu_string(self):
+        # second skill is utilizing a dictionary
+        edu_string = 'EDUCATION\n-------------\n'
+        for i,j in self.arr.items():
+            edu_string += f'{i} : {j[0]}\n'
+            if not j[2]:
+                edu_string += f'\tGrad Date: {j[3]}\n'
+            else:
+                edu_string += f'\tGraduated: {j[3]}\n'
+            edu_string += f'\tGPA: {j[1]}\n'
+        return edu_string
+
+
 
 
 # input header info as any desired list of strings
-header_strings = ['Eli M. Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pacheco55@outlook.com']
-header = HeaderInfo(header_strings)
-
-class Education:
-    
-    def __init__(self, school, degree, graduated, grad_year, gpa):
-        # school 1
-        self.school = school
-        self.degree = degree
-        self.graduated = graduated
-        self.grad_year = grad_year
-        self.gpa = gpa
-        
-    def build_edu_string(self):
-        # initialize education string and school dictionaries
-        edu_string = ''
-        school = {}
-        # Build the string
-        school[self.school] = self.degree
-        if self.graduated:
-            school['Graduated'] = self.grad_year
-        else:
-            school['Expected Grad Year'] = self.grad_year
-        school['GPA'] = self.gpa
-        for key,value in school.items(): # use 'for' loop to add key:value into education string neatly
-            edu_string += f'\t{key}: {value}\n' # format the string here to make dictionary less complex
-            edu_string += '\t'
-            if key == 'GPA':
-                edu_string += '\n'
-        return edu_string
-
-# input education experience as strings, integers, and floats
-# school name, degree, graduated?(true/false value), year graduated (or will graduate), GPA
-school1 = Education('New Mexico State University', 'BA, Digital Media', True, 2015, 3.2)
-school2 = Education('Central New Mexico University', 'AS, Mathematical Sciences', True, 2022, 3.22)
-school3 = Education('CU Boulder', 'MS - Data Science', False, 2025, 4.0)
-
-
-class ProfessionalExperience:
-    # initiate professional experience actions
-    def __init__(self, company_name, job_title, internship, dates, responsibilities):
-        self.co = company_name
-        self.title = job_title
-        self.intern = internship
-        self.dates = dates
-        self.block = responsibilities
-    
-    # function to build professional block
-    def build_prof_string(self):
-        # initialize the professional experience string
-        prof_string = f'{self.co} - {self.title} '
-        if self.intern:
-            prof_string += '<INTERNSHIP> '
-        prof_string += f', {self.dates}\n'
-        for i in self.block:
-            prof_string += f'\t - {i}\n'
-        prof_string += '\n'
-        return prof_string
-
-
-# NOTE:  I work on job responsibilities first so that i can add the array later
-r0 = ['Test and perform on console activities involving satellites during launch, early and long-term orbit operations.',
-      'Identify areas of concern across multiple systems of hardware and software and troubleshoot solutions in real-time.',
-      'Plan and configure communications support while monitoring and reviewing telemetry data.',
-      'Advise various teams of failures, degradation, and potential recovery procedures.',
-      'Conceive and build PowerShell and UNIX tools to extract, organize and display streams of data efficiently.',
-      'Support to varying states of operations, further obtaining certifications to solidify my skills in anomaly response and resolution.']
-r1 = ['Diligently monitor overhead vehicle systems for any non-nominal behavior.',
-     'Obtained certifications to become highly skilled in anomaly response and resolution.',
-     'Apply mission saving solutions across various systems of hardware and software for 24/7 flight operations.',
-     'Utilize a wide range of UNIX tools to process, troubleshoot, and apply data effectively.']
-r2 = ['With a small team of three, provided complete IT technical support to the entirety of the company in New Mexico, Arizona, California, Florida, and New York.',
-      'Using RMM, monitored all iOS and Windows devices in the company.  Confirmed overall health while pushing updates and applications.',
-      'To ensure future efficiency, created rubrics for future interns and employees to follow while ramping up in IT.']
-r3 = ['Using Python, regular expression and working with a pair programmer, I conceptualized, wrote, and tested a command line tool which parsed through firmware logs and extracted relevant data.  The parsed data would then be written into .txt and .csv files accordingly.',
-      'Tasked with optimizing the code, specifically when writing the output files.  Through collaboration, creativity, and time functions in jupyter lab, I tested several different ideas.  I concluded the function optimization by implementing code that was >100% faster than the .csv module.',
-      'Systematically troubleshot hardware using several proprietary tools.  I would then report the bugs and identify the behaviors.',
-      'All tasks relied heavily on git, GitHub and its commands.  Pulling, testing, editing, and pushing branches for pull requests were carried out daily.  The number of branches on projects ranged from 4 to 100+.']
-r4 = ['Responsible for the entirety of the stores inventory being available quickly and efficiently.',
-     'Learned advanced selling and professional communication techniques through Apple training. ']
-
-
-"""set each company's header correctly according to the constructor:
- all should be strings:
- company name, job title, internship (true/false value), dates worked"""
-company1 = ProfessionalExperience('Northrop Grumman', 'Principal Satellite Ops Tech', False, 'December 2023 - Present', r0)
-company2 = ProfessionalExperience('Lockheed Martin', 'Vehicle Systems Engineer', False, 'August 2022 - December 2023', r1)
-company3 = ProfessionalExperience('B&D Industries, INC.', 'IT Technician', True, 'Jan 2022 - June 2022', r2)
-company4 = ProfessionalExperience('Apple', 'Firmware QA & Software Engineering', True, 'Jan 2021 - June 2021', r3)
-company5 = ProfessionalExperience('Apple', 'Specialist', False, 'Nov 2015 - Jan 2021', r4)
-
-
-class Skills:
-    
-    def __init__(self, skillset, arr1, arr2):
-        self.l1 = arr1
-        self.l2 = arr2
-        self.skill_title = skillset
-        if len(arr1) != len(arr2):
-            print('Lists MUST be identical length!\nSee class "SKILLS" for why this is the case')
-            exit()
-        
-    def build_skills_string(self):
-        token = '* '
-        # initialize the skills string
-        prof_skill_string = f"{self.skill_title} | Proficiency"
-        prof_skill_string += '\n---------------------------------\n'
-        # profesional skills as a list
-        prof_skills_list = self.l1
-        proficiency_list1 = self.l2 #NOTE: These integers directly reflect skills, length must be identical
-        professional_skills_dict = dict(zip(prof_skills_list, proficiency_list1))
-        for skill, proficiency in professional_skills_dict.items():
-            prof_skill_string += f'\t{skill} | {token*proficiency}\n'
-        prof_skill_string += '\n'
-        return prof_skill_string
-
-# first input titles of each list
-tech_title = 'Technical Skills'
-prof_title = 'Professional Skills'
-# then input skills as a list of strings
-tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Operations', 'Anomaly Response', 'SSH', 'Python', 'Software Testing and QA']
-prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Apple Ecosystem', 'Windows OS']
-# enter proficienty as a list of integers
-tech_proficiency = [4,4,4,4,4,4,3,3,3,3,3]
-prof_proficiency = [5,5,5,5,5,5,5,5,5]
-# finally, use the class Skills
-tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
-prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
-
-# calling functions and utilizing classes
-# think of this as writing your resume, you can organize it however you want right here
-write_header = header.build_header_string()
-edu_title_block = 'EDUCATION:\n-----------\n' 
-write_education1 = school3.build_edu_string()
-write_education2 = school2.build_edu_string()
-write_education3 = school1.build_edu_string()
-prof_title_block = 'PROFESSIONAL EXPERIENCE:\n------------------------\n'
-write_company1 = company1.build_prof_string()
-write_company2 = company2.build_prof_string()
-write_company3 = company3.build_prof_string()
-write_company4 = company4.build_prof_string()
-write_company5 = company5.build_prof_string()
-write_tech_skills = tech_skillset.build_skills_string()
-write_prof_skills = prof_skillset.build_skills_string()
-
-# write the .txt file 
-# change the name of the .txt file as needed
-with open('eli_pacheco_resume.txt', 'w') as mywriter: # with open for optimization
-    mywriter.write(write_header)
-    mywriter.write(edu_title_block)
-    mywriter.write(write_education1)
-    mywriter.write(write_education2)
-    mywriter.write(write_education3)
-    mywriter.write(prof_title_block)
-    mywriter.write(write_company1)
-    mywriter.write(write_company2)
-    mywriter.write(write_company3)
-    mywriter.write(write_company4)
-    mywriter.write(write_company5)
-    mywriter.write(write_tech_skills)
-    mywriter.write(write_prof_skills)
-
-# I am open to any and all feedback: eli.pacheco55@outlook.com
+hl = build_strings(['Eli M. Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pacheco55@outlook.com'])
+header = build_strings.build_header_string(hl)
+el = build_strings({'CU Boulder': ['MS - Data Science', 3.5, False, 2024],
+                   'Central New Mexico University': ['AS - Mathematics', 3.25, True, 2023],
+                   'New Mexico State University':  ['BA - Creative Media', 3.2, True, 2015]})
+edu = build_strings.build_edu_string(el)
