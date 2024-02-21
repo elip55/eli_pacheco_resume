@@ -42,7 +42,7 @@ header_strings = ['Eli M. Pacheco', 'Las Cruces, NM', '(505)321-5922', 'eli.pach
 header = HeaderInfo(header_strings)
 
 class Education:
-    # education institutions can be easily added or deleted in the __init__ constructor and function
+    
     def __init__(self, school, degree, graduated, grad_year, gpa):
         # school 1
         self.school = school
@@ -123,10 +123,11 @@ r4 = ['Responsible for the entirety of the stores inventory being available quic
 """set each company's header correctly according to the constructor:
  all should be strings:
  company name, job title, internship (true/false value), dates worked"""
-company1 = ProfessionalExperience('Lockheed Martin', 'Vehicle Systems Engineer', False, 'August 2022 - Present', r1)
-company2 = ProfessionalExperience('B&D Industries, INC.', 'IT Technician', True, 'Jan 2022 - June 2022', r2)
-company3 = ProfessionalExperience('Apple', 'Firmware QA & Software Engineering', True, 'Jan 2021 - June 2021', r3)
-company4 = ProfessionalExperience('Apple', 'Specialist', False, 'Nov 2015 - Jan 2021', r4)
+company1 = ProfessionalExperience('Northrop Grumman', 'Principal Satellite Ops Tech', False, 'December 2023 - Present', r0)
+company2 = ProfessionalExperience('Lockheed Martin', 'Vehicle Systems Engineer', False, 'August 2022 - December 2023', r1)
+company3 = ProfessionalExperience('B&D Industries, INC.', 'IT Technician', True, 'Jan 2022 - June 2022', r2)
+company4 = ProfessionalExperience('Apple', 'Firmware QA & Software Engineering', True, 'Jan 2021 - June 2021', r3)
+company5 = ProfessionalExperience('Apple', 'Specialist', False, 'Nov 2015 - Jan 2021', r4)
 
 
 class Skills:
@@ -178,6 +179,7 @@ write_company1 = company1.build_prof_string()
 write_company2 = company2.build_prof_string()
 write_company3 = company3.build_prof_string()
 write_company4 = company4.build_prof_string()
+write_company5 = company5.build_prof_string()
 write_tech_skills = tech_skillset.build_skills_string()
 write_prof_skills = prof_skillset.build_skills_string()
 
@@ -194,6 +196,7 @@ with open('eli_pacheco_resume.txt', 'w') as mywriter: # with open for optimizati
     mywriter.write(write_company2)
     mywriter.write(write_company3)
     mywriter.write(write_company4)
+    mywriter.write(write_company5)
     mywriter.write(write_tech_skills)
     mywriter.write(write_prof_skills)
 
