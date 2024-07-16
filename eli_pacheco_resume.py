@@ -161,7 +161,7 @@ prof_title = 'Professional Skills'
 tech_list = ['Mathematics', 'git and GitHub', 'jupyter lab', 'Unix shell', 'Troubleshooting', 'Systems Engineering', 'Operations', 'Anomaly Response', 'SSH', 'Python', 'Software Testing and QA']
 prof_list = ['Teamwork', 'Client Development', 'Creativity', 'Task Prioritization', 'Professional Communication', 'Adaptation & Collaboration', 'Time Management', 'Apple Ecosystem', 'Windows OS']
 # enter proficienty as a list of integers
-tech_proficiency = [4,4,4,4,4,4,3,3,3,3,3]
+tech_proficiency = [4,4,4,4,4,3,3,3,3,3,3] # still beginning/mid career
 prof_proficiency = [5,5,5,5,5,5,5,5,5]
 # finally, use the class Skills
 tech_skillset = Skills(tech_title, tech_list, tech_proficiency)
@@ -169,6 +169,7 @@ prof_skillset = Skills(prof_title, prof_list, prof_proficiency)
 
 # calling functions and utilizing classes
 # think of this as writing your resume, you can organize it however you want right here
+# TODO:  clean this up
 write_header = header.build_header_string()
 edu_title_block = 'EDUCATION:\n-----------\n' 
 write_education1 = school3.build_edu_string()
